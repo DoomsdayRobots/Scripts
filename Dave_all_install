@@ -16,6 +16,8 @@ apt-get install nautilus-dropbox
 apt-get install python-uniconvertor
 apt-get install ubuntu-restricted-extras
 apt-get install unity 
+sudo chmod 777 /dev/ttyACM0
+cd /home/david
 
 # Wine 
 sudo apt-get install wine
@@ -163,8 +165,8 @@ Categories=Application;Development;
 StartupNotify=true" >> IDLE_3.4.desktop
 chmod 777 IDLE_3.4.desktop
 		
-# Eagle 7.2.0
-echo "Installing Eagle 7.2.0"
+# Eagle 7.6.0
+echo "Installing Eagle 7.6.0"
 apt-get install libcrypto++9:i386
 apt-get install libfontconfig:i386
 apt-get install libssl1.0.0:i386 
@@ -172,10 +174,10 @@ apt-get install libxcursor1:i386
 apt-get install libxi6:i386 
 apt-get install libxrender1:i386 
 apt-get install libxrandr2:i386  
-wget http://web.cadsoft.de/ftp/eagle/program/7.2/eagle-lin-7.2.0.run
-sh eagle-lin-7.2.0.run
-rm eagle-lin-7.2.0.run
-mv /home/david/eagle-7.2.0 /home/david/eagle
+wget http://web.cadsoft.de/ftp/eagle/program/7.6/eagle-lin64-7.6.0.run
+sh eagle-lin64-7.6.0.run
+rm eagle-lin64-7.6.0.run
+mv /home/david/eagle-7.6.0 /home/david/eagle
 cd /home/david/Desktop
 touch eagle.desktop
 echo "[Desktop Entry]
@@ -299,4 +301,3 @@ else
     echo ""
     echo "Created the file 'Electronic_Stuff'"
 fi
-

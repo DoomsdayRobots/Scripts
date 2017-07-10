@@ -20,9 +20,9 @@ sudo chmod 777 /dev/ttyACM0
 cd /home/david
 
 # Wine 
-sudo apt-get install wine
-sudo apt-get install wine-mono
-sudo apt-get install wine-gecko
+#sudo apt-get install wine
+#sudo apt-get install wine-mono
+#sudo apt-get install wine-gecko
 
 # Google Chrome
 apt install google-chrome-stable
@@ -52,12 +52,12 @@ TargetEnvironment=Unity
 chmod 777  Google_Chrome.desktop
 
 # OpenCV
-echo "Installing OpenCV"
-apt-get install build-essential
-apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
-apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
-apt-get install libopencv-dev
-apt-get install python-opencv
+#echo "Installing OpenCV"
+#apt-get install build-essential
+#apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+#apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
+#apt-get install libopencv-dev
+#apt-get install python-opencv
 
 # Arduino IDE
 echo "Installing Arduino IDE"
@@ -109,32 +109,32 @@ Terminal=false">> openscad.desktop
 chmod 777 openscad.desktop
 
 # DXF2Gcode
-sudo apt_get install unzip
-wget https://github.com/workflo/dxf2gcode/archive/master.zip
-unzip master.zip
-rm master.zip
-mv /home/david/dxf2gcode-master /home/david/dxf2gcode
-cd /home/david/Desktop
-touch DXF2Gcode.desktop
-echo "
-[Desktop Entry]
-Comment=
-Terminal=false
-Name=DXF2Gcode
-Exec=/home/david/dxf2gcode/source/dxf2gcode.py
-Type=Application
-Icon=/home/david/dxf2gcode/source/images/dxf2gcode_logo.png
-">> DXF2Gcode.desktop
-chmod 777 DXF2Gcode.desktop
+#sudo apt_get install unzip
+#wget https://github.com/workflo/dxf2gcode/archive/master.zip
+#unzip master.zip
+#rm master.zip
+#mv /home/david/dxf2gcode-master /home/david/dxf2gcode
+#cd /home/david/Desktop
+#touch DXF2Gcode.desktop
+#echo "
+#[Desktop Entry]
+#Comment=
+#Terminal=false
+#Name=DXF2Gcode
+#Exec=/home/david/dxf2gcode/source/dxf2gcode.py
+#Type=Application
+#Icon=/home/david/dxf2gcode/source/images/dxf2gcode_logo.png
+#">> DXF2Gcode.desktop
+#chmod 777 DXF2Gcode.desktop
 
-# IDLE 3.4
+# IDLE 2.7 & IDLE 3.4
 sudo apt-get install python
 sudo apt-get install python-pygame
 sudo apt-get install idle 2.7
 sudo apt-get install idle 3.4
-sudo apt-get install build-essential
-sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
-sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
+#sudo apt-get install build-essential
+#sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+#sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
 sudo apt-get install python-pip
 pip install pygame
 cd /home/david/Desktop
@@ -270,6 +270,8 @@ Icon=/home/david/Universal_G-Code_Sender/UGS_48x48.png
 " >> Universal_G-code_Sender.desktop
 chmod 777 Universal_G-code_Sender.desktop
 cd /home/david
+
+
 #----------------Folder creator----------------
 echo "This is the Script 'Find'" 
 if [ -d Cad_Stuff] 

@@ -12,52 +12,13 @@ apt-get install cups-pdf
 apt-get install firefox
 apt-get install git
 apt-get install gitk
-apt-get install nautilus-dropbox
+apt-get install dropbox
 apt-get install python-uniconvertor
 apt-get install ubuntu-restricted-extras
 apt-get install unity 
 sudo chmod 777 /dev/ttyACM0
 cd /home/david
 
-# Wine 
-#sudo apt-get install wine
-#sudo apt-get install wine-mono
-#sudo apt-get install wine-gecko
-
-# Google Chrome
-apt install google-chrome-stable
-cd /home/david/Desktop
-touch Google_Chrome.desktop
-echo "[Desktop Entry]
-Version=1.0
-Name=Google Chrome
-GenericName=Web Browser
-Comment=Access the Internet
-Exec=/usr/bin/google-chrome-stable %U
-Terminal=false
-Icon=google-chrome
-Type=Application
-Categories=Network;WebBrowser;
-MimeType=text/html;text/xml;application/xhtml_xml;image/webp;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
-X-Ayatana-Desktop-Shortcuts=NewWindow;NewIncognito
-[NewWindow Shortcut Group]
-Name=New Window
-Exec=/usr/bin/google-chrome-stable
-TargetEnvironment=Unity
-[NewIncognito Shortcut Group]
-Name=New Incognito Window
-Exec=/usr/bin/google-chrome-stable --incognito
-TargetEnvironment=Unity
-" >>  Google_Chrome.desktop
-chmod 777  Google_Chrome.desktop
-
-# OpenCV
-#echo "Installing OpenCV"
-#apt-get install build-essential
-#apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
-#apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
-#apt-get install libopencv-dev
-#apt-get install python-opencv
 
 # Arduino IDE
 echo "Installing Arduino IDE"
@@ -86,8 +47,11 @@ StartupWMClass=processing-app-Base
 Name[en_CA]=Arduino" >> arduino.desktop
 chmod 777 arduino.desktop
 rm ~/Desktop/arduino-arduinoide.desktop
-sudo 
+sudo
 cd /dev chmod 777 ttyACM0
+sudo
+cd /dev chmod 777 ttyACM1
+
 
 # Openscad
 echo "Installing OpenScad" 
@@ -108,35 +72,16 @@ Categories=Graphics;3DGraphics;Engineering;
 Terminal=false">> openscad.desktop
 chmod 777 openscad.desktop
 
-# DXF2Gcode
-#sudo apt_get install unzip
-#wget https://github.com/workflo/dxf2gcode/archive/master.zip
-#unzip master.zip
-#rm master.zip
-#mv /home/david/dxf2gcode-master /home/david/dxf2gcode
-#cd /home/david/Desktop
-#touch DXF2Gcode.desktop
-#echo "
-#[Desktop Entry]
-#Comment=
-#Terminal=false
-#Name=DXF2Gcode
-#Exec=/home/david/dxf2gcode/source/dxf2gcode.py
-#Type=Application
-#Icon=/home/david/dxf2gcode/source/images/dxf2gcode_logo.png
-#">> DXF2Gcode.desktop
-#chmod 777 DXF2Gcode.desktop
 
 # IDLE 2.7 & IDLE 3.4
 sudo apt-get install python
+sudo apt-get install python-pip
+pip install pygame
 sudo apt-get install python-pygame
 sudo apt-get install idle 2.7
 sudo apt-get install idle 3.4
-#sudo apt-get install build-essential
-#sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
-#sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
-sudo apt-get install python-pip
-pip install pygame
+sudo apt-get update
+
 cd /home/david/Desktop
 touch IDLE_2.7.desktop
 echo "
@@ -151,6 +96,7 @@ Categories=Application;Development;
 StartupNotify=true
 Name[en_CA]=IDLE 2.7" >> IDLE_2.7.desktop
 chmod 777 IDLE_2.7.desktop
+
 cd /home/david/Desktop
 touch IDLE_3.4.desktop
 echo "
@@ -192,8 +138,11 @@ Type=Application
 Terminal=false" >> eagle.desktop
 chmod 777 eagle.desktop
 
+
+
 # Inkscape
 sudo apt-get install inkscape
+sudo apt-get update
 cd /home/david/Desktop
 touch inkscape.desktop
 echo "[Desktop Entry]
@@ -220,6 +169,7 @@ chmod 777 inkscape.desktop
 # Pinta paint program
 cd /home/david
 sudo apt-get install pinta
+sudo apt-get update
 cd /home/david/Desktop
 touch Pinta.desktop
 echo "[Desktop Entry]
@@ -245,7 +195,7 @@ cd /home/david
 
 # Universal G-code Sender
 cd /home/david
-wget http://bit.ly/1M6z2ys
+sudo wget http://bit.ly/1M6z2ys
 cd /home/david
 mkdir /home/david/Universal_G-Code_Sender
 unzip 1M6z2ys -d /home/david/Universal_G-Code_Sender
@@ -273,6 +223,7 @@ cd /home/david
 
 
 #----------------Folder creator----------------
+cd /home/david
 echo "This is the Script 'Find'" 
 if [ -d Cad_Stuff] 
 then 

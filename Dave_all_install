@@ -47,11 +47,10 @@ StartupWMClass=processing-app-Base
 Name[en_CA]=Arduino" >> arduino.desktop
 chmod 777 arduino.desktop
 rm ~/Desktop/arduino-arduinoide.desktop
-sudo
-cd /dev chmod 777 ttyACM0
-sudo
-cd /dev chmod 777 ttyACM1
-
+sudo usermod -a -G dialout david
+cd /dev 
+sudo chmod 777 ttyACM0
+sudo chmod 777 ttyACM1
 
 # Openscad
 echo "Installing OpenScad" 

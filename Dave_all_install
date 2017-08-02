@@ -52,6 +52,26 @@ cd /dev
 sudo chmod 777 ttyACM0
 sudo chmod 777 ttyACM1
 
+
+# Processing
+wget http://download.processing.org/processing-3.3.5-linux64.tgz
+cd /home/david
+tar -xf processing-3.3.5-linux64.tgz
+rm processing-3.3.5-linux64.tgz
+cd /home/david/processing-3.3.5
+sh install.sh
+
+cd /home/david
+sudo rm -rf /tmp/processing*/java
+sudo ln -s /usr/lib/jvm/[jre1.X] \
+/tmp/processing*/java
+ls /usr/lib/jvm
+sudo su -c "chown -R root:root /tmp/processing*"
+sudo su -c "mv /tmp/processing* /opt/processing"
+sudo su -c "ln -s /opt/processing/processing \
+/usr/local/bin/processing"
+
+
 # Openscad
 echo "Installing OpenScad" 
 sudo add-apt-repository -y ppa:openscad/releases
@@ -144,7 +164,6 @@ Name=Eagle
 Type=Application
 Terminal=false" >> eagle.desktop
 chmod 777 eagle.desktop
-
 
 
 # Inkscape

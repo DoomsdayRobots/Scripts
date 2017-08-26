@@ -92,23 +92,17 @@ Terminal=false">> openscad.desktop
 chmod 777 openscad.desktop
 
 
-# IDLE 2.7 & IDLE 3.4
-sudo apt-get install python
-sudo apt-get install libopencv-dev
-sudo apt-get install python-opencv
-sudo apt-get install guvcview
-sudo apt-get install cheese
-sudo apt-get install python3-serial
-sudo apt-get install python-pip
+# Python libraries
+sudo apt-get install python-pip #installs pip
 sudo pip install cv2wrap
 sudo pip install partypi
 sudo pip install opencv-utils
 sudo pip install opencv_helpers
-sudo apt-get install python-pygame
 sudo apt-get install idle 2.7
 sudo apt-get install idle 3.4
 sudo apt-get update
 
+# IDLE 2.7 & IDLE 3.4
 cd /home/david/Desktop
 touch IDLE_2.7.desktop
 echo "

@@ -8,14 +8,10 @@ echo " "
 
 #----------------Main Installs----------------
 sudo apt-get install cmake
-apt-get install cups-pdf
 apt-get install firefox
 apt-get install git
 apt-get install gitk
 apt-get install dropbox
-apt-get install python-uniconvertor
-apt-get install ubuntu-restricted-extras
-apt-get install unity 
 sudo chmod 777 /dev/ttyACM0
 cd /home/david
 

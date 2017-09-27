@@ -8,13 +8,11 @@ echo " "
 
 #----------------Main Installs----------------
 sudo apt-get install cmake
-apt-get install firefox
-apt-get install git
-apt-get install gitk
-apt-get install dropbox
-sudo chmod 777 /dev/ttyACM0
+sudo apt-get install firefox
+sudo apt-get install git
+sudo apt-get install gitk
+sudo apt-get install dropbox
 cd /home/david
-
 
 # Arduino IDE
 echo "Installing Arduino IDE"

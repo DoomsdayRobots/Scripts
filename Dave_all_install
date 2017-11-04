@@ -14,6 +14,20 @@ sudo apt-get install gitk
 sudo apt-get install dropbox
 cd /home/david
 
+#Add USB Support
+#sudo usermod -a -G dialout $YourUserNameHere
+sudo usermod -a -G dialout david
+#cd /dev 
+sudo chmod 777 ttyACM0
+sudo chmod 777 ttyACM1
+sudo chmod 777 /dev/ttyUSB0
+sudo chmod 777 /dev/ttyUSB1
+sudo chmod 777 /dev/ttyS0
+sudo chmod 777 /dev/ttyS1
+sudo chmod 777 /dev/ttyS31
+sudo chmod 777 /dev/ttyS32
+sudo chmod 777 /dev/ttyS33
+
 # Arduino IDE
 echo "Installing Arduino IDE"
 cd /home/david
@@ -41,11 +55,6 @@ StartupWMClass=processing-app-Base
 Name[en_CA]=Arduino" >> arduino.desktop
 chmod 777 arduino.desktop
 rm ~/Desktop/arduino-arduinoide.desktop
-sudo usermod -a -G dialout david
-cd /dev 
-sudo chmod 777 ttyACM0
-sudo chmod 777 ttyACM1
-
 
 # Processing
 wget http://download.processing.org/processing-3.3.5-linux64.tgz

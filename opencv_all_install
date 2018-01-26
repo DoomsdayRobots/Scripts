@@ -1,0 +1,20 @@
+#!/bin/bash
+# Installs packages that are useful for a full dev environment.
+# Currently targeted at 14.04
+
+echo "Installs packages that are useful for My development environment." 
+echo "Currently targeted at Linux Mint 14.04"
+echo " "
+
+#----------------Main Installs----------------
+mkdir opencv_workspace
+cd opencv_workspace/
+sudo apt-get install cmake 
+sudo apt-get install git
+git clone https://github.com/Itseez/opencv.git
+sudo apt-get install build-essential
+sudo apt-get install libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev 
+sudo apt-get install python3-dev python3-numpy
+sudo apt-get install libopencv-dev
+# git clone https://github.com/python/cpython/

@@ -57,22 +57,14 @@ chmod 777 arduino.desktop
 rm ~/Desktop/arduino-arduinoide.desktop
 
 # Processing
-wget http://download.processing.org/processing-3.3.5-linux64.tgz
 cd /home/david
-tar -xf processing-3.3.5-linux64.tgz
+wget http://download.processing.org/processing-3.3.5-linux64.tgz
+tar xf processing-3.3.5-linux64.tgz
+
 rm processing-3.3.5-linux64.tgz
 cd /home/david/processing-3.3.5
 sh install.sh
-
 cd /home/david
-sudo rm -rf /tmp/processing*/java
-sudo ln -s /usr/lib/jvm/[jre1.X] \
-/tmp/processing*/java
-ls /usr/lib/jvm
-sudo su -c "chown -R root:root /tmp/processing*"
-sudo su -c "mv /tmp/processing* /opt/processing"
-sudo su -c "ln -s /opt/processing/processing \
-/usr/local/bin/processing"
 
 
 # Openscad
@@ -93,17 +85,18 @@ MimeType=application/x-openscad;
 Categories=Graphics;3DGraphics;Engineering;
 Terminal=false">> openscad.desktop
 chmod 777 openscad.desktop
+cd /home/david
 
 
-# Python libraries
-sudo apt-get install idle 2.7
-sudo apt-get install idle 3.4
+# IDLE 2.7 
+cd /home/david
+sudo bash
 sudo apt-get update
+sudo apt-get install idle-python2.7
 
-# IDLE 2.7 & IDLE 3.4
 cd /home/david/Desktop
-touch IDLE_2.7.desktop
-echo "
+touch idle_2.7.desktop
+echo " 
 [Desktop Entry]
 Name=IDLE (using Python-2.7)
 Comment=Integrated Development Environment for Python (using Python-2.7)
@@ -113,31 +106,45 @@ Terminal=false
 Type=Application
 Categories=Application;Development;
 StartupNotify=true
-Name[en_CA]=IDLE 2.7" >> IDLE_2.7.desktop
-chmod 777 IDLE_2.7.desktop
+Name[en_CA]=IDLE 2.7">> idle_2.7.desktop
+chmod 777 idle_2.7.desktop
+cd /home/david
+exit
+
+
+# IDLE 3.4
+cd /home/david
+sudo bash
+sudo apt-get install idle3
 
 cd /home/david/Desktop
-touch IDLE_3.4.desktop
+touch idle_3.4.desktop
 echo "
 [Desktop Entry]
-Name=IDLE_3.4
-Comment=Integrated Development Environment for Python (using Python-3.4)
-Exec=/usr/bin/idle-python3.4
-Icon=/usr/share/pixmaps/python3.4.xpm
+Name=IDLE (using Python-3.5)
+Comment=Integrated Development Environment for Python (using Python-3.5)
+Exec=/usr/bin/idle-python3.5
+Icon=/usr/share/pixmaps/python3.5.xpm
 Terminal=false
 Type=Application
 Categories=Application;Development;
-StartupNotify=true" >> IDLE_3.4.desktop
-chmod 777 IDLE_3.4.desktop
+StartupNotify=true
+Name[en_CA]=IDLE 3.5">> idle_3.4.desktop
+chmod 777 idle_3.4.desktop
+cd /home/david
+exit
 
 
 #----------------Open Cv Installs----------------
 
+#install pip
+sudo apt-get install python-pip
+sudo apt-get upgrade python-pip
+pip install numpy
+pip install pygame
+pip install matplotlib
+
 #Update packages
-sudo apt-get install python-pip #installs pip
-python3 -m pip install -U pygame --user
-pip install -U pygame --user
-sudo apt-get install python-pygame
 sudo apt-get update
 sudo apt-get upgrade
 
@@ -177,17 +184,21 @@ sudo apt-get install python-dev python-pip python3-dev python3-pip
 sudo -H pip2 install -U pip numpy
 sudo -H pip3 install -U pip numpy
 
+
+sudo find . -name "opencv" -type d -exec rm -r "{}" \;
 # Download opencv from Github
 git clone https://github.com/opencv/opencv.git
 cd opencv 
 git checkout 3.3.1 
 cd ..
 
+sudo find . -name "opencv_contrib" -type d -exec rm -r "{}" \;
 # Download opencv_contrib from Github
 git clone https://github.com/opencv/opencv_contrib.git
 cd opencv_contrib
 git checkout 3.3.1
 cd ..
+
 
 # Compile and install OpenCV with contrib modules
 cd opencv
@@ -213,28 +224,15 @@ OpenCV’s Python binary (cv2.so) can be installed either in directory site-pack
 Use the following command to find out the correct location on your machine.
 """
 
+cd /home/david
 find /usr/local/lib/ -type f -name "cv2*.so"
 
-sudo apt-get install Ipython
-#sudo apt get remove 
+cd /home/david
+sudo apt-get install ipython
+cd /home/david
 
+sudo apt-get autoremove 
 
-#----------------Installs jupiter----------------
-#sudo add-apt-repository ppa:jolicloud-team/ppa
-#sudo apt-get install jupiter
-
-sudo apt-get install nodejs-legacy npm javascript-common python-pip python-virtualenv python-dev
-# Use a virtual environment
-virtualenv jupyter-venv
-source jupyter-venv/bin/activate
-# ensure setuptools/pip are up-to-date
-pip install --upgrade setuptools pip
-git clone git://github.com/jupyter/notebook.git
-cd notebook
-pip install --pre -e .
- 
-jupyter --version
-# Output: 4.0.6
 		
 # Eagle 7.6.0
 echo "Installing Eagle 7.6.0"
@@ -265,6 +263,10 @@ Terminal=false" >> eagle.desktop
 chmod 777 eagle.desktop
 
 
+# Dropbox 
+sudo apt-get install nautilus-dropbox
+
+
 # Inkscape
 sudo apt-get install inkscape
 sudo apt-get update
@@ -290,6 +292,9 @@ Name=New Drawing
 Exec=inkscape
 TargetEnvironment=Unity" >> inkscape.desktop
 chmod 777 inkscape.desktop
+
+cd /home/david
+nautilus --quit
 
 # Pinta paint program
 cd /home/david

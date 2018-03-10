@@ -134,11 +134,15 @@ chmod 777 idle_3.4.desktop
 cd /home/david
 exit
 
+# Python Pip 
+sudo apt-get install python-pip 
+sudo -H pip install keyboard
 
 #----------------Open Cv Installs----------------
 sudo apt-get install python-matplotlib
 sudo apt-get install python-pygame
 sudo apt-get install python-numpy
+sudo apt-get install python-skimage
 sudo apt-get install --assume-yes build-essential cmake git
 sudo apt-get install --assume-yes pkg-config unzip ffmpeg qtbase5-dev python-dev python3-dev python-numpy python3-numpy
 sudo apt-get install --assume-yes libopencv-dev libgtk-3-dev libdc1394-22 libdc1394-22-dev libjpeg-dev libpng12-dev libtiff5-dev libjasper-dev

@@ -14,19 +14,6 @@ sudo apt-get install gitk
 sudo apt-get install dropbox
 cd /home/david
 
-#Add USB Support
-#sudo usermod -a -G dialout $YourUserNameHere
-sudo usermod -a -G dialout david
-#cd /dev 
-sudo chmod 777 ttyACM0
-sudo chmod 777 ttyACM1
-sudo chmod 777 /dev/ttyUSB0
-sudo chmod 777 /dev/ttyUSB1
-sudo chmod 777 /dev/ttyS0
-sudo chmod 777 /dev/ttyS1
-sudo chmod 777 /dev/ttyS31
-sudo chmod 777 /dev/ttyS32
-sudo chmod 777 /dev/ttyS33
 
 # Arduino IDE
 echo "Installing Arduino IDE"
@@ -56,6 +43,7 @@ Name[en_CA]=Arduino" >> arduino.desktop
 chmod 777 arduino.desktop
 rm ~/Desktop/arduino-arduinoide.desktop
 
+
 # Processing
 cd /home/david
 wget http://download.processing.org/processing-3.3.5-linux64.tgz
@@ -65,6 +53,22 @@ rm processing-3.3.5-linux64.tgz
 cd /home/david/processing-3.3.5
 sh install.sh
 cd /home/david
+
+
+
+#Add USB Support
+#sudo usermod -a -G dialout $YourUserNameHere
+sudo usermod -a -G dialout david
+#cd /dev 
+sudo chmod 777 ttyACM0
+sudo chmod 777 ttyACM1
+sudo chmod 777 /dev/ttyUSB0
+sudo chmod 777 /dev/ttyUSB1
+sudo chmod 777 /dev/ttyS0
+sudo chmod 777 /dev/ttyS1
+sudo chmod 777 /dev/ttyS31
+sudo chmod 777 /dev/ttyS32
+sudo chmod 777 /dev/ttyS33
 
 
 # Openscad
@@ -86,6 +90,8 @@ Categories=Graphics;3DGraphics;Engineering;
 Terminal=false">> openscad.desktop
 chmod 777 openscad.desktop
 cd /home/david
+
+
 
 
 # IDLE 2.7 
@@ -112,6 +118,8 @@ cd /home/david
 exit
 
 
+
+
 # IDLE 3.4
 cd /home/david
 sudo bash
@@ -133,6 +141,8 @@ Name[en_CA]=IDLE 3.5">> idle_3.4.desktop
 chmod 777 idle_3.4.desktop
 cd /home/david
 exit
+
+
 
 # Python Pip 
 sudo apt-get install python-pip 
@@ -170,6 +180,15 @@ rm /home/david opencv.zip
 cd /home/david
 
 
+#  Testing your OpenCV Install using Python
+python
+import cv2
+#cv2.__version__
+#'3.3.0'
+
+
+
+
 		
 # Eagle 7.6.0
 echo "Installing Eagle 7.6.0"
@@ -200,8 +219,41 @@ Terminal=false" >> eagle.desktop
 chmod 777 eagle.desktop
 
 
+
+
+# KiCad
+cd /home/david
+sudo add-apt-repository --yes ppa:js-reynaud/kicad-4
+sudo apt-get update
+sudo apt-get install kicad
+
+cd /home/david/Desktop
+touch KiCad.desktop
+echo " 
+[Desktop Entry]
+Categories=Development;Electronics;
+Comment=Design a printed circuit board
+Comment[fr]=Concevoir un circuit imprimé
+Exec=kicad %f
+GenericName=EDA Suite
+GenericName[fr]=Suite logicielle de conception électronique
+Icon=kicad
+MimeType=application/x-kicad-project;
+Name=KiCad
+Type=Application" >> KiCad.desktop
+chmod 777 KiCad.desktop
+cd /home/david/Desktop
+
+
+
+
+
+
 # Dropbox 
 sudo apt-get install nautilus-dropbox
+
+
+
 
 
 # Inkscape

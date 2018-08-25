@@ -96,7 +96,6 @@ cd /home/david
 
 # IDLE 2.7 
 cd /home/david
-sudo bash
 sudo apt-get update
 sudo apt-get install idle-python2.7
 
@@ -115,14 +114,10 @@ StartupNotify=true
 Name[en_CA]=IDLE 2.7">> idle_2.7.desktop
 chmod 777 idle_2.7.desktop
 cd /home/david
-exit
-
-
 
 
 # IDLE 3.4
 cd /home/david
-sudo bash
 sudo apt-get install idle3
 
 cd /home/david/Desktop
@@ -140,8 +135,6 @@ StartupNotify=true
 Name[en_CA]=IDLE 3.5">> idle_3.4.desktop
 chmod 777 idle_3.4.desktop
 cd /home/david
-exit
-
 
 
 # Python Pip 
@@ -219,14 +212,11 @@ Terminal=false" >> eagle.desktop
 chmod 777 eagle.desktop
 
 
-
-
 # KiCad
 cd /home/david
-sudo add-apt-repository --yes ppa:js-reynaud/kicad-4
+sudo add-apt-repository --yes ppa:js-reynaud/kicad-5
 sudo apt-get update
 sudo apt-get install kicad
-
 cd /home/david/Desktop
 touch KiCad.desktop
 echo " 
@@ -246,14 +236,8 @@ cd /home/david/Desktop
 
 
 
-
-
-
 # Dropbox 
 sudo apt-get install nautilus-dropbox
-
-
-
 
 
 # Inkscape
@@ -314,6 +298,7 @@ cd /home/david
 
 # Universal G-code Sender
 cd /home/david
+sudo wget https://github.com/DoomsdayRobots/Scripts/tree/master/UGS_Icons/UGS_48x48.png
 sudo wget http://bit.ly/1M6z2ys
 cd /home/david
 mkdir /home/david/Universal_G-Code_Sender

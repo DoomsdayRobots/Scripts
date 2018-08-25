@@ -124,15 +124,14 @@ cd /home/david/Desktop
 touch idle_3.4.desktop
 echo "
 [Desktop Entry]
-Name=IDLE (using Python-3.5)
-Comment=Integrated Development Environment for Python (using Python-3.5)
-Exec=/usr/bin/idle-python3.5
-Icon=/usr/share/pixmaps/python3.5.xpm
+Name=IDLE 3.4
+Comment=Integrated Development Environment for Python (using Python-3.6)
+Exec=/usr/bin/idle-python3.6
+Icon=/usr/share/pixmaps/python3.6.xpm
 Terminal=false
 Type=Application
 Categories=Application;Development;
-StartupNotify=true
-Name[en_CA]=IDLE 3.5">> idle_3.4.desktop
+StartupNotify=true">> idle_3.4.desktop
 chmod 777 idle_3.4.desktop
 cd /home/david
 
@@ -298,7 +297,7 @@ cd /home/david
 
 # Universal G-code Sender
 cd /home/david
-sudo wget https://github.com/DoomsdayRobots/Scripts/tree/master/UGS_Icons/UGS_48x48.png
+wget https://github.com/DoomsdayRobots/Scripts/raw/master/UGS_Icons/UGS_48x48.png
 sudo wget http://bit.ly/1M6z2ys
 cd /home/david
 mkdir /home/david/Universal_G-Code_Sender
@@ -309,7 +308,6 @@ cd /home/david/Universal_G-Code_Sender
 chmod 777 start-windows.bat
 chmod 777 start.sh
 cd /home/david/Universal_G-Code_Sender
-wget https://raw.githubusercontent.com/DoomsdayRobots/Scripts/master/UGS_Icons/UGS_48x48.png
 
 cd /home/david/Desktop
 touch Universal_G-code_Sender.desktop
@@ -320,11 +318,12 @@ Terminal=true
 Name=Universal_G-Code_Sender
 Exec=/home/david/Universal_G-Code_Sender/start.sh
 Type=Application
-Icon=/home/david/Universal_G-Code_Sender/UGS_48x48.png
+Icon=/home/david/UGS_48x48.png
 " >> Universal_G-code_Sender.desktop
 chmod 777 Universal_G-code_Sender.desktop
 cd /home/david
-
+rm /home/david/UGS_48x48.png
+rm /home/david/UGS_Icons
 
 #----------------Folder creator----------------
 cd /home/david

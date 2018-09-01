@@ -298,7 +298,7 @@ cd /home/david
 # Universal G-code Sender
 cd /home/david
 wget https://github.com/DoomsdayRobots/Scripts/raw/master/UGS_Icons/UGS_48x48.png
-sudo wget http://bit.ly/1M6z2ys
+wget http://bit.ly/1M6z2ys
 cd /home/david
 mkdir /home/david/Universal_G-Code_Sender
 unzip 1M6z2ys -d /home/david/Universal_G-Code_Sender
@@ -318,7 +318,7 @@ Terminal=true
 Name=Universal_G-Code_Sender
 Exec=/home/david/Universal_G-Code_Sender/start.sh
 Type=Application
-Icon=/home/david/UGS_48x48.png
+Icon=/home/david/Universal_G-Code_Sender/UGS_48x48.png
 " >> Universal_G-code_Sender.desktop
 chmod 777 Universal_G-code_Sender.desktop
 cd /home/david

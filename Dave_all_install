@@ -15,35 +15,6 @@ sudo apt-get install dropbox
 cd /home/david
 
 
-# Arduino IDE
-echo "Installing Arduino IDE"
-cd /home/david
-wget https://www.arduino.cc/download.php?f=/arduino-nightly-linux64.tar.xz
-tar -xf download.php?f=%2Farduino-nightly-linux64.tar.xz
-cd /home/david/arduino-nightly
-chmod 777 install.sh
-sh install.sh
-cd /home/david
-rm download.php?f=%2Farduino-nightly-linux64.tar.xz
-cd /home/david/Desktop
-touch arduino.desktop
-echo "[Desktop Entry]
-Type=Application
-Name=Arduino IDE
-GenericName=Arduino IDE
-Comment=Open-source electronics prototyping platform
-Exec=/home/david/arduino-nightly/arduino
-Icon=arduino-arduinoide
-Terminal=false
-Categories=Development;IDE;Electronics;
-MimeType=text/x-arduino;
-Keywords=embedded electronics;electronics;avr;microcontroller;
-StartupWMClass=processing-app-Base
-Name[en_CA]=Arduino" >> arduino.desktop
-chmod 777 arduino.desktop
-rm ~/Desktop/arduino-arduinoide.desktop
-
-
 # Processing
 cd /home/david
 wget http://download.processing.org/processing-3.3.5-linux64.tgz
@@ -53,7 +24,7 @@ rm processing-3.3.5-linux64.tgz
 cd /home/david/processing-3.3.5
 sh install.sh
 cd /home/david
-
+sudo apt-get update
 
 
 #Add USB Support
@@ -69,7 +40,7 @@ sudo chmod 777 /dev/ttyS1
 sudo chmod 777 /dev/ttyS31
 sudo chmod 777 /dev/ttyS32
 sudo chmod 777 /dev/ttyS33
-
+sudo apt-get update
 
 # Openscad
 echo "Installing OpenScad" 
@@ -90,7 +61,7 @@ Categories=Graphics;3DGraphics;Engineering;
 Terminal=false">> openscad.desktop
 chmod 777 openscad.desktop
 cd /home/david
-
+sudo apt-get update
 
 
 
@@ -114,11 +85,12 @@ StartupNotify=true
 Name[en_CA]=IDLE 2.7">> idle_2.7.desktop
 chmod 777 idle_2.7.desktop
 cd /home/david
-
+sudo apt-get update
 
 # IDLE 3.4
 cd /home/david
 sudo apt-get install idle3
+
 
 cd /home/david/Desktop
 touch idle_3.4.desktop
@@ -134,6 +106,7 @@ Categories=Application;Development;
 StartupNotify=true">> idle_3.4.desktop
 chmod 777 idle_3.4.desktop
 cd /home/david
+sudo apt-get update
 
 
 # Python Pip 
@@ -177,11 +150,28 @@ python
 import cv2
 #cv2.__version__
 #'3.3.0'
+sudo apt-get update
 
 
-
-
+# SNES Game Emulator
+sudo add-apt-repository ppa:random-stuff/ppa
+sudo apt-get update
+sudo apt-get install snes9x-gtk
 		
+# Sega Genesis Emulator
+sudo apt-get install dgen
+sudo apt-get update
+
+# Nintendo Gameboy Colour Emulator
+sudo apt-get install gngb
+sudo apt-get update
+
+# Nintendo DS Emulator
+sudo apt-get install desmume
+sudo apt-get update
+"""
+
+
 # Eagle 7.6.0
 echo "Installing Eagle 7.6.0"
 apt-get install libcrypto++9:i386
@@ -209,34 +199,12 @@ Name=Eagle
 Type=Application
 Terminal=false" >> eagle.desktop
 chmod 777 eagle.desktop
-
-
-# KiCad
-cd /home/david
-sudo add-apt-repository --yes ppa:js-reynaud/kicad-5
 sudo apt-get update
-sudo apt-get install kicad
-cd /home/david/Desktop
-touch KiCad.desktop
-echo " 
-[Desktop Entry]
-Categories=Development;Electronics;
-Comment=Design a printed circuit board
-Comment[fr]=Concevoir un circuit imprimé
-Exec=kicad %f
-GenericName=EDA Suite
-GenericName[fr]=Suite logicielle de conception électronique
-Icon=kicad
-MimeType=application/x-kicad-project;
-Name=KiCad
-Type=Application" >> KiCad.desktop
-chmod 777 KiCad.desktop
-cd /home/david/Desktop
-
 
 
 # Dropbox 
 sudo apt-get install nautilus-dropbox
+sudo apt-get update
 
 
 # Inkscape
@@ -264,9 +232,11 @@ Name=New Drawing
 Exec=inkscape
 TargetEnvironment=Unity" >> inkscape.desktop
 chmod 777 inkscape.desktop
+sudo apt-get update
 
 cd /home/david
 nautilus --quit
+sudo apt-get update
 
 # Pinta paint program
 cd /home/david
@@ -287,6 +257,7 @@ Type=Application
 Categories=Graphics;2DGraphics;
 MimeType=image/bmp;">> Pinta.desktop
 chmod 777 Pinta.desktop
+sudo apt-get update
 
 # Java8 program
 cd /home/david
@@ -294,6 +265,7 @@ sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install oracle-java8-installer
 cd /home/david
+sudo apt-get update
 
 # Universal G-code Sender
 cd /home/david
@@ -324,6 +296,8 @@ chmod 777 Universal_G-code_Sender.desktop
 cd /home/david
 rm /home/david/UGS_48x48.png
 rm /home/david/UGS_Icons
+cd /home/david
+sudo apt-get update
 
 #----------------Folder creator----------------
 cd /home/david

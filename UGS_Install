@@ -22,6 +22,7 @@ cd /home/david
 wget https://github.com/DoomsdayRobots/Scripts/raw/master/UGS_Icons/UGS_48x48.png
 wget http://bit.ly/1M6z2ys
 mkdir /home/david/Universal_G-Code_Sender
+mv /home/david/UGS_48x48.png /home/david/Universal_G-Code_Sender/UGS_48x48.png
 unzip 1M6z2ys -d /home/david/Universal_G-Code_Sender
 rm /home/david/1M6z2ys
 cd /home/david/Universal_G-Code_Sender
@@ -35,12 +36,11 @@ Comment=none
 Terminal=true
 Name=UGS
 Exec=/home/david/Universal_G-Code_Sender/start.sh
-Icon=/home/david/UGS_48x48.png
+Icon=/home/david/Universal_G-Code_Sender/UGS_48x48.png
 Type=Application" >> UGS.desktop
 
 chmod 777 UGS.desktop
 cd /home/david
-rm /home/david/UGS_48x48.png
 rm /home/david/UGS_Icons
 cd /home/david
 sudo apt-get update

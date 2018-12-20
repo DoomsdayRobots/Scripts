@@ -152,24 +152,18 @@ import cv2
 #'3.3.0'
 sudo apt-get update
 
-
-# SNES Game Emulator
-sudo add-apt-repository ppa:random-stuff/ppa
-sudo apt-get update
-sudo apt-get install snes9x-gtk
-		
-# Sega Genesis Emulator
-sudo apt-get install dgen
-sudo apt-get update
-
-# Nintendo Gameboy Colour Emulator
-sudo apt-get install gngb
-sudo apt-get update
+# install file extention helper 
+pip install pathlib
+pip install pathlib2
 
 
-# Nintendo DS Emulator
-sudo apt-get install desmume
+# install Tensorflow: a library for doing real time object tracking with opencv 
+pip install setuptools
+pip install tensorflow
+pip install pathlib2
 sudo apt-get update
+cd /home/david
+
 
 
 # Eagle 7.6.0
@@ -205,6 +199,34 @@ sudo apt-get update
 # Dropbox 
 sudo apt-get install nautilus-dropbox
 sudo apt-get update
+
+# Cheeze
+sudo apt-get install cheese
+cd /home/david/Desktop
+
+touch Cheese.desktop
+echo "
+[Desktop Entry]
+Name=Cheese
+GenericName=Webcam Booth
+X-GNOME-FullName=Cheese Webcam Booth
+Comment=Take photos and videos with your webcam, with fun graphical effects
+Keywords=photo;video;webcam;
+Exec=cheese
+Terminal=false
+Type=Application
+StartupNotify=true
+Icon=org.gnome.Cheese
+Categories=GNOME;AudioVideo;Video;Recorder;
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=cheese
+X-GNOME-Bugzilla-Component=general
+X-GNOME-Bugzilla-Version=3.28.0
+X-AppStream-Ignore=true
+X-Ubuntu-Gettext-Domain=cheese" >> Cheese.desktop
+chmod 777 Cheese.desktop
+sudo apt-get update
+cd /home/david
 
 
 # Inkscape
@@ -259,45 +281,67 @@ MimeType=image/bmp;">> Pinta.desktop
 chmod 777 Pinta.desktop
 sudo apt-get update
 
-# Java8 program
+# Java11 program for linux mint 19
 cd /home/david
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-sudo apt-get install oracle-java8-installer
-cd /home/david
-sudo apt-get update
+sudo add-apt-repository ppa:linuxuprising/java
+sudo apt update
+sudo apt install oracle-java11-installer
 
 # Universal G-code Sender
 cd /home/david
 wget https://github.com/DoomsdayRobots/Scripts/raw/master/UGS_Icons/UGS_48x48.png
 wget http://bit.ly/1M6z2ys
-cd /home/david
 mkdir /home/david/Universal_G-Code_Sender
 unzip 1M6z2ys -d /home/david/Universal_G-Code_Sender
-cd /home/david
 rm /home/david/1M6z2ys
 cd /home/david/Universal_G-Code_Sender
 chmod 777 start-windows.bat
 chmod 777 start.sh
-cd /home/david/Universal_G-Code_Sender
-
 cd /home/david/Desktop
-touch Universal_G-code_Sender.desktop
+touch UGS.desktop
 echo "
 [Desktop Entry]
-Comment=
+Comment=none
 Terminal=true
-Name=Universal_G-Code_Sender
+Name=UGS
 Exec=/home/david/Universal_G-Code_Sender/start.sh
-Type=Application
-Icon=/home/david/Universal_G-Code_Sender/UGS_48x48.png
-" >> Universal_G-code_Sender.desktop
-chmod 777 Universal_G-code_Sender.desktop
+Icon=/home/david/UGS_48x48.png
+Type=Application" >> UGS.desktop
+
+chmod 777 UGS.desktop
 cd /home/david
 rm /home/david/UGS_48x48.png
 rm /home/david/UGS_Icons
 cd /home/david
 sudo apt-get update
+
+
+
+# Game emulators
+# SNES 
+cd /home/david
+sudo add-apt-repository ppa:random-stuff/ppa
+sudo apt-get update
+sudo apt-get install snes9x-gtk
+cd /home/david
+
+cd /home/david/Desktop
+touch Snes9x.desktop
+echo "[Desktop Entry]
+Name=Snes9x
+GenericName=Super Nintendo Emulator
+Comment=Super Nintendo Entertainment System
+Type=Application
+Categories=Game;Emulator;
+MimeType=application/vnd.nintendo.snes.rom;application/x-snes-rom;
+Exec=snes9x-gtk %F
+TryExec=snes9x-gtk
+Icon=snes9x
+Keywords=emulator;Nintendo;Super;SNES;Famicom;">> Snes9x.desktop
+chmod 777 Snes9x.desktop
+sudo apt-get update
+cd /home/david
+
 
 #----------------Folder creator----------------
 cd /home/david

@@ -1,0 +1,47 @@
+#!/bin/bash
+# Installs packages that are useful for a full dev environment.
+# Currently targeted at 14.04
+
+# Java11 program for linux mint 19
+cd /home/david
+#sudo add-apt-repository ppa:linuxuprising/java
+#sudo apt update
+#sudo apt install oracle-java11-installer
+
+#or
+sudo add-apt-repository ppa:openjdk-r/ppa
+sudo apt-get update 
+sudo apt-get install openjdk-8-jdk openjdk-11-jdk
+sudo apt-get update 
+#sudo update-alternatives --config java
+#sudo update-alternatives --config javac
+
+
+# Universal G-code Sender
+cd /home/david
+wget https://github.com/DoomsdayRobots/Scripts/raw/master/UGS_Icons/UGS_48x48.png
+wget http://bit.ly/1M6z2ys
+mkdir /home/david/Universal_G-Code_Sender
+unzip 1M6z2ys -d /home/david/Universal_G-Code_Sender
+rm /home/david/1M6z2ys
+cd /home/david/Universal_G-Code_Sender
+chmod 777 start-windows.bat
+chmod 777 start.sh
+cd /home/david/Desktop
+touch UGS.desktop
+echo "
+[Desktop Entry]
+Comment=none
+Terminal=true
+Name=UGS
+Exec=/home/david/Universal_G-Code_Sender/start.sh
+Icon=/home/david/UGS_48x48.png
+Type=Application" >> UGS.desktop
+
+chmod 777 UGS.desktop
+cd /home/david
+rm /home/david/UGS_48x48.png
+rm /home/david/UGS_Icons
+cd /home/david
+sudo apt-get update
+

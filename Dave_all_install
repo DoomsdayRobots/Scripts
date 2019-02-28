@@ -111,13 +111,21 @@ sudo apt-get update
 
 # Python Pip 
 sudo apt-get install python-pip 
-sudo -H pip install keyboard
+sudo apt-get update
+pip install keyboard
+pip install scipy
+pip install pipy
+pip install matplotlib
+pip install numpy
+pip install serial
+pip install camera
+pip install pathlib
+pip install pathlib2
+pip install setuptools
+pip install tensorflow
+pip install pathlib2
 
 #----------------Open Cv Installs----------------
-sudo apt-get install python-matplotlib
-sudo apt-get install python-pygame
-sudo apt-get install python-numpy
-sudo apt-get install python-skimage
 sudo apt-get install --assume-yes build-essential cmake git
 sudo apt-get install --assume-yes pkg-config unzip ffmpeg qtbase5-dev python-dev python3-dev python-numpy python3-numpy
 sudo apt-get install --assume-yes libopencv-dev libgtk-3-dev libdc1394-22 libdc1394-22-dev libjpeg-dev libpng12-dev libtiff5-dev libjasper-dev
@@ -327,34 +335,27 @@ sudo apt-get update
 
 
 # Game emulators
-# SNES 
-cd /home/david
-sudo add-apt-repository ppa:random-stuff/ppa
-sudo apt-get update
-sudo apt-get install snes9x-gtk
-cd /home/david
+# Zsnes
+echo " Now installing the game emulator ( Zsnes ) it is an SNES emulator...."
+sudo apt-get install zsnes 
 
-cd /home/david/Desktop
-touch Snes9x.desktop
-echo "[Desktop Entry]
-Name=Snes9x
-GenericName=Super Nintendo Emulator
-Comment=Super Nintendo Entertainment System
-Type=Application
-Categories=Game;Emulator;
-MimeType=application/vnd.nintendo.snes.rom;application/x-snes-rom;
-Exec=snes9x-gtk %F
-TryExec=snes9x-gtk
-Icon=snes9x
-Keywords=emulator;Nintendo;Super;SNES;Famicom;">> Snes9x.desktop
-chmod 777 Snes9x.desktop
-sudo apt-get update
+# fceux
 cd /home/david
+echo " Now installing the game emulator ( fceux ) it is an NES emulator...."
+sudo apt-get install fceux
+
+# Controller Drivers
+echo "Now Installing Joystick Drivers..."  
+sudo apt-get install joystick
+sudo apt-get install xserver-xorg-input-joystick
+jscal /dev/input/js0
+
+
 
 
 #----------------Folder creator----------------
 cd /home/david
-echo "This is the Script 'Find'" 
+echo "This is a script to create folder if they don't already exist" 
 if [ -d Cad_Stuff] 
 then 
     echo "Found the file 'Cad_Stuff'"
@@ -362,7 +363,7 @@ else
     echo "Could not find the file 'Cad_Stuff'"
     mkdir Cad_Stuff
     echo ""
-    echo "Created the file 'Cad_Stuff'"
+    echo "Created the folder 'Cad_Stuff'"
 fi
 
 if [ -d Programing_Stuff ] 
@@ -371,8 +372,21 @@ then
 else 
     echo "Could not find the file 'Programing_Stuff'"
     mkdir Programing_Stuff
+    cd /home/david/Programing_Stuff
+    mkdir Arduino_Stuff
+    cd /home/david/Programing_Stuff/Arduino_Stuff
+    mkdir Project_SAMAS
+    cd /home/david/Programing_Stuff
+    mkdir Python_Stuff
+    cd /home/david/Programing_Stuff/Python_Stuff
+    mkdir Games
+    cd /home/david/Programing_Stuff/Python_Stuff
+    mkdir OpenCV_Stuff
+    cd /home/david/Programing_Stuff/Python_Stuff/OpenCV_Stuff
+    mkdir Project_Drinking_Glass
+    cd /home/david
     echo ""
-    echo "Created the file 'Programing_Stuff'"
+    echo "Created the folder 'Programing_Stuff'"
 fi
 
 if [ -d Electronic_Stuff ] 
@@ -381,6 +395,21 @@ then
 else 
     echo "Could not find the file 'Electronic_Stuff'"
     mkdir Electronic_Stuff
+    cd /home/david/Electronic_Stuff
+    mkdir Eagle_Stuff
+    cd /home/david/Electronic_Stuff
+    mkdir KI_Cad
+    
     echo ""
-    echo "Created the file 'Electronic_Stuff'"
+    echo "Created the folder 'Electronic_Stuff'"
+fi
+
+if [ -d Games ] 
+then 
+    echo "Found the file 'Games'"
+else 
+    echo "Could not find the file 'Games'"
+    mkdir Games
+    echo ""
+    echo "Created the folder 'Games'"
 fi

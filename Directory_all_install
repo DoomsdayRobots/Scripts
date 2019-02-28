@@ -1,0 +1,67 @@
+#!/bin/bash
+
+#----------------Folder creator----------------
+cd /home/david
+echo "This is a script to create folder if they don't already exist" 
+if [ -d Cad_Stuff] 
+then 
+    echo "Found the file 'Cad_Stuff'"
+else 
+    echo "Could not find the file 'Cad_Stuff'"
+    mkdir Cad_Stuff
+    echo ""
+    echo "Created the folder 'Cad_Stuff'"
+fi
+
+if [ -d Programing_Stuff ] 
+then 
+    echo "Found the file 'Programing_Stuff'"
+else 
+    echo "Could not find the file 'Programing_Stuff'"
+    mkdir Programing_Stuff
+    cd /home/david/Programing_Stuff
+    mkdir Arduino_Stuff
+    cd /home/david/Programing_Stuff/Arduino_Stuff
+    mkdir Project_SAMAS
+    cd /home/david/Programing_Stuff
+    mkdir Python_Stuff
+    cd /home/david/Programing_Stuff/Python_Stuff
+    mkdir Games
+    cd /home/david/Programing_Stuff/Python_Stuff
+    mkdir OpenCV_Stuff
+    cd /home/david/Programing_Stuff/Python_Stuff/OpenCV_Stuff
+    mkdir Project_Drinking_Glass
+    cd /home/david
+    echo ""
+    echo "Created the folder 'Programing_Stuff'"
+fi
+
+if [ -d Electronic_Stuff ] 
+then 
+
+
+    echo "Found the file 'Electronic_Stuff'"
+else 
+    echo "Could not find the file 'Electronic_Stuff'"
+    mkdir Electronic_Stuff
+    cd /home/david/Electronic_Stuff
+    mkdir Eagle_Stuff
+    cd /home/david/Electronic_Stuff
+    mkdir KI_Cad
+    
+    echo ""
+    echo "Created the folder 'Electronic_Stuff'"
+fi
+
+if [ -d Games ] 
+then 
+    echo "Found the file 'Games'"
+else 
+    echo "Could not find the file 'Games'"
+    mkdir Games
+    echo ""
+    echo "Created the folder 'Games'"
+fi
+
+
+echo"Finished"

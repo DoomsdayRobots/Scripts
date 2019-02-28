@@ -124,6 +124,13 @@ pip install pathlib2
 pip install setuptools
 pip install tensorflow
 pip install pathlib2
+pip install servo
+pip install arduino-servo
+pip install tts-watson
+pip install pyttsx3
+pip install PyAudio
+pip install vinisto
+
 
 #----------------Open Cv Installs----------------
 sudo apt-get install --assume-yes build-essential cmake git

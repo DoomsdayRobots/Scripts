@@ -110,11 +110,12 @@ sudo apt-get update
 
 
 # Python Pip 
+echo "Installing python pip"
 sudo apt-get install python-pip 
 sudo apt-get update
 pip install keyboard
 pip install scipy
-pip install pipy
+pip install pypi
 pip install matplotlib
 pip install numpy
 pip install serial
@@ -132,8 +133,49 @@ pip install PyAudio
 pip install vinisto
 cd /home/david
 
-# Eagle 7.6.0
-echo "Installing Eagle 7.6.0"
+
+#----------------Open Cv Installs----------------
+echo "Installing Opencv for python 2.7"
+sudo apt-get install python-matplotlib
+sudo apt-get install python-pygame
+sudo apt-get install python-numpy
+sudo apt-get install python-skimage
+sudo apt-get install --assume-yes build-essential cmake git
+sudo apt-get install --assume-yes pkg-config unzip ffmpeg qtbase5-dev python-dev python3-dev python-numpy python3-numpy
+sudo apt-get install --assume-yes libopencv-dev libgtk-3-dev libdc1394-22 libdc1394-22-dev libjpeg-dev libpng12-dev libtiff5-dev libjasper-dev
+sudo apt-get install --assume-yes libavcodec-dev libavformat-dev libswscale-dev libxine2-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev
+sudo apt-get install --assume-yes libv4l-dev libtbb-dev libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev
+sudo apt-get install --assume-yes libvorbis-dev libxvidcore-dev v4l-utils vtk6
+sudo apt-get install --assume-yes liblapacke-dev libopenblas-dev libgdal-dev checkinstall
+
+wget -O opencv.zip https://github.com/opencv/opencv/archive/3.3.0.zip
+unzip opencv.zip
+cd opencv-3.3.0
+
+mkdir build
+cd build/    
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D FORCE_VTK=ON -D WITH_TBB=ON -D WITH_V4L=ON -D WITH_QT=ON -D WITH_OPENGL=ON -D WITH_CUBLAS=ON -D CUDA_NVCC_FLAGS="-D_FORCE_INLINES" -D WITH_GDAL=ON -D WITH_XINE=ON -D BUILD_EXAMPLES=ON ..
+make -j $(($(nproc) + 1))
+
+sudo make install
+sudo /bin/bash -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/opencv.conf'
+sudo ldconfig
+sudo apt-get update
+
+cd /home/david
+rm /home/david opencv.zip
+cd /home/david
+
+
+#  Testing your OpenCV Install using Python
+#python
+#import cv2
+#cv2.__version__
+#'3.3.0'
+
+
+# Eagle 9.3.0
+echo "Installing Eagle 9.3.0"
 apt-get install libcrypto++9:i386
 apt-get install libfontconfig:i386
 apt-get install libssl1.0.0:i386 
@@ -142,25 +184,26 @@ apt-get install libxi6:i386
 apt-get install libxrender1:i386 
 apt-get install libxrandr2:i386  
 
-wget http://web.cadsoft.de/ftp/eagle/program/7.6/eagle-lin64-7.6.0.run
-sh eagle-lin64-7.6.0.run
-rm eagle-lin64-7.6.0.run
-mv /home/david/eagle-7.6.0 /home/david/eagle
-cd /home/david/Desktop
-touch eagle.desktop
-echo "[Desktop Entry]
-Categories=Development;Engineering;Electronics;
-Comment=Design a printed circuit board.
-Exec=/home/david/eagle/bin/eagle
-GenericName=PCB Designer
-Icon=/home/david/eagle/bin/eagleicon50.png
-MimeType=application/vnd.cadsoft.eagle.board;application/vnd.cadsoft.eagle.project;application/vnd.cadsoft.eagle.schematic
-Name=Eagle
-Type=Application
-Terminal=false" >> eagle.desktop
-chmod 777 eagle.desktop
-sudo apt-get update
+wget https://www.autodesk.com/eagle-download-lin
+mv /home/david/eagle-download-lin /home/david/Autodesk_Eagle_9.3.0_English_Linux_64bit.tar.gz 
+tar xzf Autodesk_Eagle_9.3.0_English_Linux_64bit.tar.gz 
+rm Autodesk_Eagle_9.3.0_English_Linux_64bit.tar.gz 
+/home/david/eagle-9.3.0/eagle
 
+cd /home/david/Desktop
+touch Eagle.desktop
+echo "[Desktop Entry]
+Name=Eagle
+Exec=/home/david/eagle-9.3.0/eagle
+Comment=
+Terminal=true
+Icon=/home/david/eagle-9.3.0/bin/eagle-logo.png
+Type=Application
+Hidden=false
+NoDisplay=false" >> Eagle.desktop
+chmod 777 Eagle.desktop
+sudo apt-get update
+cd /home/david
 
 # Dropbox 
 sudo apt-get install nautilus-dropbox

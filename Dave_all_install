@@ -392,6 +392,8 @@ fi
 
 if [ -d Electronic_Stuff ] 
 then 
+
+
     echo "Found the file 'Electronic_Stuff'"
 else 
     echo "Could not find the file 'Electronic_Stuff'"
@@ -414,3 +416,6 @@ else
     echo ""
     echo "Created the folder 'Games'"
 fi
+
+
+echo "Finished"

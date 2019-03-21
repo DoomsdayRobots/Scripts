@@ -1,0 +1,47 @@
+#bash
+
+echo " This is a Python PIP package module installer for Windowzzzz"
+echo " It includes packages and modules you use the most for Python"
+
+python -m pip install --upgrade pip
+python -m pip install keyboard
+python -m pip install brew
+python -m pip install speech_classification
+python -m pip install python_speech_features
+python -m pip install ConfigParser
+python -m pip install PyAudio
+python -m pip install audio
+python -m pip install serial
+python -m pip install joystick
+python -m pip install camera
+python -m pip install humanize-gcode
+python -m pip install pillow
+python -m pip install ImageMagic
+python -m pip install gcodeutils
+python -m pip install pypandoc
+python -m pip install pycnc
+python -m pip install grbl-link
+python -m pip install makerbot_driver
+python -m pip install fabby
+python -m pip install gcody
+python -m pip install scipy
+python -m pip install numpy
+python -m pip install DM-Ware
+python -m pip install matplotlib
+python -m pip install pygame
+python -m pip install watson_tts_py
+python -m pip install tts-watson
+python -m pip install setuptools
+python -m pip install wheel
+python -m pip install pathlib
+python -m pip install pathlib2
+python -m pip install opencv-python
+python -m pip install scikit-image
+python -m pip install arduino
+python -m pip install YOSO
+python -m pip install servo
+python -m pip install pyttsx3
+python -m pip install rsa
+python -m pip install cryptography
+python -m pip install easyencrypt
+python -m pip install tensorflow

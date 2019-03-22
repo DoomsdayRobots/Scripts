@@ -42,6 +42,83 @@ sudo chmod 777 /dev/ttyS32
 sudo chmod 777 /dev/ttyS33
 sudo apt-get update
 
+
+# Arduino
+echo "Installing Arduino"
+cd /home/david
+sudo apt-get install arduino
+sudo apt-get upgrade arduino
+
+cd /home/david
+
+# usb enabling
+sudo groupmod -a -G dialout david
+sudo groupmod -a -G dialout root
+sudo groupmod -a -G dialout adm
+
+sudo groupmod -a -G root david
+sudo groupmod -a -G root dialout
+sudo Groupmod -a -G root adm
+
+sudo groupmod -a -G adm david
+sudo groupmod -a -G adm root
+sudo groupmod -a -G adm dialout
+
+
+# BOINC 
+echo "Now Installing BOINC"
+cd /home/dave
+sudo apt-get install boinc-client boinc-manager
+cd /home/david/Desktop
+
+touch Boinc.desktop
+echo "
+[Desktop Entry]
+Type=Application
+Version=1.0
+Exec=boincmgr
+Path=/var/lib/boinc-client
+Icon=boincmgr
+Categories=System;Monitor;GTK;
+Keywords=computation;science;
+Name=BOINC Manager
+GenericName=BOINC monitor and control utility
+GenericName[cs]=Monitorovací a ovládací nástroj pro BOINC
+GenericName[de]=BOINC Überwachungs- und Kontrollprogramm
+GenericName[pt]=Monitorização BOINC e utilitário de controlo
+GenericName[pt_BR]=Utilitário de controle e monitoramento do BOINC
+Comment=Configure or monitor a BOINC core client
+Comment[cs]=Monitoruje a nastavuje klienta BOINC
+Comment[de]=BOINC Basis Client konfigurieren oder überwachen
+Comment[pt]=Configurar ou monitorizar o cliente básico do BOINC
+Comment[pt_BR]=Configure ou monitore o cliente básico do BOINC" >> Boinc.desktop
+chmod 777 Boinc.desktop
+cd /home/david
+
+
+
+
+
+
+cd /home/david/Desktop
+touch Arduino.desktop
+echo " 
+[Desktop Entry]
+Type=Application
+Name=Arduino IDE
+GenericName=Create physical computing projects
+Exec=arduino
+Icon=arduino
+Terminal=false
+Categories=Development;Engineering;Electronics;
+MimeType=text/x-arduino
+Keywords=embedded electronics;electronics;avr;microcontroller;">> Arduino.desktop
+chmod 777 Arduino.desktop
+cd /home/david
+
+
+
+
 # Openscad
 echo "Installing OpenScad" 
 sudo add-apt-repository -y ppa:openscad/releases
@@ -110,9 +187,11 @@ sudo apt-get update
 
 
 # Python Pip 
-echo "Installing python pip"
+echo "Installing python PIP Modules"
+
 sudo apt-get install python-pip 
-sudo apt-get update
+sudo apt-get upgrade python-pip
+
 pip install keyboard
 pip install scipy
 pip install pypi
@@ -125,12 +204,42 @@ pip install pathlib2
 pip install setuptools
 pip install tensorflow
 pip install pathlib2
+pip install YOLO
+pip install YOSO
 pip install servo
+pip install arduino
 pip install arduino-servo
 pip install tts-watson
 pip install pyttsx3
 pip install PyAudio
 pip install vinisto
+pip install cryptography
+
+# pip2 modules
+echo "Now for PIP2 Modules"
+pip2 install keyboard
+pip2 install scipy
+pip2 install pypi
+pip2 install matplotlib
+pip2 install numpy
+pip2 install serial
+pip2 install camera
+pip2 install pathlib
+pip2 install pathlib2
+pip2 install setuptools
+pip2 install tensorflow
+pip2 install pathlib2
+pip2 install YOLO
+pip2 install YOSO
+pip2 install servo
+pip2 install arduino
+pip2 install arduino-servo
+pip2 install tts-watson
+pip2 install pyttsx3
+pip2 install PyAudio
+pip2 install vinisto
+pip2 install cryptography
+
 cd /home/david
 
 
@@ -206,8 +315,11 @@ sudo apt-get update
 cd /home/david
 
 # Dropbox 
-sudo apt-get install nautilus-dropbox
-sudo apt-get update
+#sudo apt-get install nautilus-dropbox
+#sudo apt-get update
+#wget https://www.dropbox.com/install
+wget https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2019.01.31_amd64.deb
+
 
 # Cheeze
 sudo apt-get install cheese

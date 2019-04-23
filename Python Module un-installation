@@ -19,7 +19,6 @@ sudo -H python3 -m pip uninstall camera
 sudo -H python3 -m pip uninstall pygame
 sudo -H python3 -m pip uninstall numpy
 sudo -H python3 -m pip uninstall matplotlib
-sudo -H python3 -m pip uninstall pipy
 sudo -H python3 -m pip uninstall scipy
 
 echo  "Un-installing specialty sound related things eg.(text to speech)"
@@ -45,9 +44,7 @@ sudo -H python3 -m pip uninstall pillow
 
 echo "Un-installing visual manipulation stuff eg.(opencv and tensorflow)"
 sudo -H python3 -m pip uninstall opencv-python
-sudo -H python3 -m pip uninstall scikit
 sudo -H python3 -m pip uninstall scikit-image
-sudo -H python3 -m pip uninstall ImageMagic
 sudo -H python3 -m pip uninstall arduino
 sudo -H python3 -m pip uninstall pyopengl
 sudo -H python3 -m pip uninstall YOSO

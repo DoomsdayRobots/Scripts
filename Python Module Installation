@@ -23,7 +23,6 @@ sudo -H python3 -m pip install camera
 sudo -H python3 -m pip install pygame
 sudo -H python3 -m pip install numpy
 sudo -H python3 -m pip install matplotlib
-sudo -H python3 -m pip install pipy
 sudo -H python3 -m pip install scipy
 
 echo  "Installing specialty sound related things eg.(text to speech)"
@@ -49,9 +48,7 @@ sudo -H python3 -m pip install pillow
 
 echo "Installing visual manipulation stuff eg.(opencv and tensorflow)"
 sudo -H python3 -m pip install opencv-python
-sudo -H python3 -m pip install scikit
 sudo -H python3 -m pip install scikit-image
-sudo -H python3 -m pip install ImageMagic
 sudo -H python3 -m pip install arduino
 sudo -H python3 -m pip install pyopengl
 sudo -H python3 -m pip install YOSO

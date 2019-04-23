@@ -7,40 +7,31 @@ echo "Currently targeted at Linux Mint 14.04"
 echo " "
 
 #----------------Main Installs----------------
+echo "Main installs"
 sudo apt-get install cmake
 sudo apt-get install firefox
+sudo apt-get upgrade firefox
 sudo apt-get install git
+sudo apt-get upgrade git
 sudo apt-get install gitk
+sudo apt-get upgrade gitk
 sudo apt-get install dropbox
+sudo apt-get upgrade dropbox
+sudo apt-get update
 cd /home/david
 
 
 # Processing
+echo "Installing Processing"
 cd /home/david
 wget http://download.processing.org/processing-3.3.5-linux64.tgz
 tar xf processing-3.3.5-linux64.tgz
-
 rm processing-3.3.5-linux64.tgz
 cd /home/david/processing-3.3.5
 sh install.sh
 cd /home/david
 sudo apt-get update
-
-
-#Add USB Support
-#sudo usermod -a -G dialout $YourUserNameHere
-sudo usermod -a -G dialout david
-#cd /dev 
-sudo chmod 777 ttyACM0
-sudo chmod 777 ttyACM1
-sudo chmod 777 /dev/ttyUSB0
-sudo chmod 777 /dev/ttyUSB1
-sudo chmod 777 /dev/ttyS0
-sudo chmod 777 /dev/ttyS1
-sudo chmod 777 /dev/ttyS31
-sudo chmod 777 /dev/ttyS32
-sudo chmod 777 /dev/ttyS33
-sudo apt-get update
+cd /home/david
 
 
 # Arduino
@@ -48,10 +39,28 @@ echo "Installing Arduino"
 cd /home/david
 sudo apt-get install arduino
 sudo apt-get upgrade arduino
-
+sudo apt-get update
 cd /home/david
 
-# usb enabling
+cd /home/david/Desktop
+touch Arduino.desktop
+echo " 
+[Desktop Entry]
+Type=Application
+Name=Arduino IDE
+GenericName=Create physical computing projects
+Exec=arduino
+Icon=arduino
+Terminal=false
+Categories=Development;Engineering;Electronics;
+MimeType=text/x-arduino
+Keywords=embedded electronics;electronics;avr;microcontroller;">> Arduino.desktop
+chmod 777 Arduino.desktop
+cd /home/david
+
+
+#Add USB Support
+sudo usermod -a -G dialout david
 sudo groupmod -a -G dialout david
 sudo groupmod -a -G dialout root
 sudo groupmod -a -G dialout adm
@@ -64,6 +73,17 @@ sudo groupmod -a -G adm david
 sudo groupmod -a -G adm root
 sudo groupmod -a -G adm dialout
 
+sudo chmod 777 ttyACM0
+sudo chmod 777 ttyACM1
+sudo chmod 777 /dev/ttyUSB0
+sudo chmod 777 /dev/ttyUSB1
+sudo chmod 777 /dev/ttyS0
+sudo chmod 777 /dev/ttyS1
+sudo chmod 777 /dev/ttyS31
+sudo chmod 777 /dev/ttyS32
+sudo chmod 777 /dev/ttyS33
+sudo apt-get update
+cd /home/david
 
 # BOINC 
 echo "Now Installing BOINC"
@@ -93,27 +113,7 @@ Comment[de]=BOINC Basis Client konfigurieren oder überwachen
 Comment[pt]=Configurar ou monitorizar o cliente básico do BOINC
 Comment[pt_BR]=Configure ou monitore o cliente básico do BOINC" >> Boinc.desktop
 chmod 777 Boinc.desktop
-cd /home/david
-
-
-
-
-
-
-cd /home/david/Desktop
-touch Arduino.desktop
-echo " 
-[Desktop Entry]
-Type=Application
-Name=Arduino IDE
-GenericName=Create physical computing projects
-Exec=arduino
-Icon=arduino
-Terminal=false
-Categories=Development;Engineering;Electronics;
-MimeType=text/x-arduino
-Keywords=embedded electronics;electronics;avr;microcontroller;">> Arduino.desktop
-chmod 777 Arduino.desktop
+sudo apt-get update
 cd /home/david
 
 
@@ -121,9 +121,14 @@ cd /home/david
 
 # Openscad
 echo "Installing OpenScad" 
+cd /home/david
 sudo add-apt-repository -y ppa:openscad/releases
 sudo apt-get update
 sudo apt-get install openscad
+sudo apt-get upgrade openscad
+sudo apt-get update
+cd /home/david
+
 cd /home/david/Desktop
 touch openscad.desktop
 echo " 
@@ -139,35 +144,16 @@ Terminal=false">> openscad.desktop
 chmod 777 openscad.desktop
 cd /home/david
 sudo apt-get update
-
-
-
-# IDLE 2.7 
 cd /home/david
-sudo apt-get update
-sudo apt-get install idle-python2.7
 
-cd /home/david/Desktop
-touch idle_2.7.desktop
-echo " 
-[Desktop Entry]
-Name=IDLE (using Python-2.7)
-Comment=Integrated Development Environment for Python (using Python-2.7)
-Exec=/usr/bin/idle-python2.7
-Icon=/usr/share/pixmaps/python2.7.xpm
-Terminal=false
-Type=Application
-Categories=Application;Development;
-StartupNotify=true
-Name[en_CA]=IDLE 2.7">> idle_2.7.desktop
-chmod 777 idle_2.7.desktop
-cd /home/david
-sudo apt-get update
 
 # IDLE 3.4
+echo "Installing IDLE3.4" 
 cd /home/david
 sudo apt-get install idle3
-
+sudo apt-get upgrade idle3
+sudo apt-get update
+cd /home/david
 
 cd /home/david/Desktop
 touch idle_3.4.desktop
@@ -186,64 +172,8 @@ cd /home/david
 sudo apt-get update
 
 
-# Python Pip 
-echo "Installing python PIP Modules"
-
-sudo apt-get install python-pip 
-sudo apt-get upgrade python-pip
-
-pip install keyboard
-pip install scipy
-pip install pypi
-pip install matplotlib
-pip install numpy
-pip install serial
-pip install camera
-pip install pathlib
-pip install pathlib2
-pip install setuptools
-pip install tensorflow
-pip install pathlib2
-pip install YOLO
-pip install YOSO
-pip install servo
-pip install arduino
-pip install arduino-servo
-pip install tts-watson
-pip install pyttsx3
-pip install PyAudio
-pip install vinisto
-pip install cryptography
-
-# pip2 modules
-echo "Now for PIP2 Modules"
-pip2 install keyboard
-pip2 install scipy
-pip2 install pypi
-pip2 install matplotlib
-pip2 install numpy
-pip2 install serial
-pip2 install camera
-pip2 install pathlib
-pip2 install pathlib2
-pip2 install setuptools
-pip2 install tensorflow
-pip2 install pathlib2
-pip2 install YOLO
-pip2 install YOSO
-pip2 install servo
-pip2 install arduino
-pip2 install arduino-servo
-pip2 install tts-watson
-pip2 install pyttsx3
-pip2 install PyAudio
-pip2 install vinisto
-pip2 install cryptography
-
-cd /home/david
-
-
 #----------------Open Cv Installs----------------
+cd /home/david
 echo "Installing Opencv for python 2.7"
 sudo apt-get install python-matplotlib
 sudo apt-get install python-pygame
@@ -285,13 +215,22 @@ cd /home/david
 
 # Eagle 9.3.0
 echo "Installing Eagle 9.3.0"
-apt-get install libcrypto++9:i386
-apt-get install libfontconfig:i386
-apt-get install libssl1.0.0:i386 
-apt-get install libxcursor1:i386  
-apt-get install libxi6:i386 
-apt-get install libxrender1:i386 
-apt-get install libxrandr2:i386  
+cd /home/david
+sudo apt-get install libcrypto++9:i386
+sudo apt-get install libfontconfig:i386
+sudo apt-get install libssl1.0.0:i386 
+sudo apt-get install libxcursor1:i386  
+sudo apt-get install libxi6:i386 
+sudo apt-get install libxrender1:i386 
+sudo apt-get install libxrandr2:i386  
+sudo apt-get upgrade libcrypto++9:i386
+sudo apt-get upgrade libfontconfig:i386
+sudo apt-get upgrade libssl1.0.0:i386 
+sudo apt-get upgrade libxcursor1:i386  
+sudo apt-get upgrade libxi6:i386 
+sudo apt-get upgrade libxrender1:i386 
+sudo apt-get upgrade libxrandr2:i386  
+sudo apt-get update
 
 wget https://www.autodesk.com/eagle-download-lin
 mv /home/david/eagle-download-lin /home/david/Autodesk_Eagle_9.3.0_English_Linux_64bit.tar.gz 
@@ -315,6 +254,8 @@ sudo apt-get update
 cd /home/david
 
 # Dropbox 
+echo "Installing Dropbox"
+cd /home/david
 #sudo apt-get install nautilus-dropbox
 #sudo apt-get update
 #wget https://www.dropbox.com/install
@@ -322,9 +263,14 @@ wget https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2019.01.31_amd6
 
 
 # Cheeze
+echo "Installing Cheese"
+cd /home/david
 sudo apt-get install cheese
-cd /home/david/Desktop
+sudo apt-get upgrade cheese
+sudo apt-get update
+cd /home/david
 
+cd /home/david/Desktop
 touch Cheese.desktop
 echo "
 [Desktop Entry]
@@ -351,8 +297,13 @@ cd /home/david
 
 
 # Inkscape
+echo "InstallingInkscape"
+cd /home/david
 sudo apt-get install inkscape
+sudo apt-get upgrade inkscape
 sudo apt-get update
+cd /home/david
+
 cd /home/david/Desktop
 touch inkscape.desktop
 echo "[Desktop Entry]
@@ -376,15 +327,17 @@ Exec=inkscape
 TargetEnvironment=Unity" >> inkscape.desktop
 chmod 777 inkscape.desktop
 sudo apt-get update
-
 cd /home/david
-nautilus --quit
-sudo apt-get update
+
 
 # Pinta paint program
+echo "Installing Pinta"
 cd /home/david
 sudo apt-get install pinta
+sudo apt-get upgrade pinta
 sudo apt-get update
+cd /home/david
+
 cd /home/david/Desktop
 touch Pinta.desktop
 echo "[Desktop Entry]
@@ -401,24 +354,22 @@ Categories=Graphics;2DGraphics;
 MimeType=image/bmp;">> Pinta.desktop
 chmod 777 Pinta.desktop
 sudo apt-get update
+cd /home/david
+
 
 
 # Java11 program for linux mint 19
+echo "Installing Java 11"
 cd /home/david
-#sudo add-apt-repository ppa:linuxuprising/java
-#sudo apt update
-#sudo apt install oracle-java11-installer
-
-#or
 sudo add-apt-repository ppa:openjdk-r/ppa
 sudo apt-get update 
 sudo apt-get install openjdk-8-jdk openjdk-11-jdk
+sudo apt-get upgrade openjdk-8-jdk openjdk-11-jdk
 sudo apt-get update 
-#sudo update-alternatives --config java
-#sudo update-alternatives --config javac
-
+cd /home/david
 
 # Universal G-code Sender
+echo "Installing Universal G-Code Sender"
 cd /home/david
 wget https://github.com/DoomsdayRobots/Scripts/raw/master/UGS_Icons/UGS_48x48.png
 wget http://bit.ly/1M6z2ys
@@ -462,8 +413,6 @@ echo "Now Installing Joystick Drivers..."
 sudo apt-get install joystick
 sudo apt-get install xserver-xorg-input-joystick
 jscal /dev/input/js0
-
-
 
 
 #----------------Folder creator----------------

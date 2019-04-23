@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# Python3 module installation 
+echo "Python3 module installation"
+cd /home/david
+
+echo "Un-installing some basics things"
+sudo -H python3 -m pip uninstall setuptools
+sudo -H python3 -m pip uninstall wheel
+sudo -H python3 -m pip uninstall pathlib
+sudo -H python3 -m pip uninstall pathlib2
+sudo -H python3 -m pip uninstall brew
+sudo -H python3 -m pip uninstall configparser
+sudo -H python3 -m pip uninstall PyAudio
+sudo -H python3 -m pip uninstall keyboard
+sudo -H python3 -m pip uninstall serial
+sudo -H python3 -m pip uninstall joystick
+sudo -H python3 -m pip uninstall camera
+sudo -H python3 -m pip uninstall pygame
+sudo -H python3 -m pip uninstall numpy
+sudo -H python3 -m pip uninstall matplotlib
+sudo -H python3 -m pip uninstall pipy
+sudo -H python3 -m pip uninstall scipy
+
+echo  "Un-installing specialty sound related things eg.(text to speech)"
+sudo -H python3 -m pip uninstall python-speech-features
+sudo -H python3 -m pip uninstall speech_classification
+sudo -H python3 -m pip uninstall watson_tts_py
+sudo -H python3 -m pip uninstall tts-watson
+sudo -H python3 -m pip uninstall pyttsx3
+
+echo "Un-installing CNC and stl related Things"
+sudo -H python3 -m pip uninstall gcodeutils
+sudo -H python3 -m pip uninstall pypandoc
+sudo -H python3 -m pip uninstall pycnc
+sudo -H python3 -m pip uninstall grbl-link
+sudo -H python3 -m pip uninstall makerbot_driver
+sudo -H python3 -m pip uninstall fabby
+sudo -H python3 -m pip uninstall gcody
+sudo -H python3 -m pip uninstall numpy-stl
+sudo -H python3 -m pip uninstall pyg3d
+sudo -H python3 -m pip uninstall rsa
+sudo -H python3 -m pip uninstall humanize-gcode
+sudo -H python3 -m pip uninstall pillow
+
+echo "Un-installing visual manipulation stuff eg.(opencv and tensorflow)"
+sudo -H python3 -m pip uninstall opencv-python
+sudo -H python3 -m pip uninstall scikit
+sudo -H python3 -m pip uninstall scikit-image
+sudo -H python3 -m pip uninstall ImageMagic
+sudo -H python3 -m pip uninstall arduino
+sudo -H python3 -m pip uninstall pyopengl
+sudo -H python3 -m pip uninstall YOSO
+sudo -H python3 -m pip uninstall tensorflow
+
+cd /home/david
+

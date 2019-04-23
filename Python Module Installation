@@ -1,0 +1,61 @@
+#!/bin/bash
+
+# Python3 module installation 
+echo "Python3 module installation"
+cd /home/david
+
+sudo apt-get install python3-pip
+sudo apt-get upgrade python3-pip
+sudo apt-get update
+
+echo "Installing some basics things"
+sudo -H python3 -m pip install setuptools
+sudo -H python3 -m pip install wheel
+sudo -H python3 -m pip install pathlib
+sudo -H python3 -m pip install pathlib2
+sudo -H python3 -m pip install brew
+sudo -H python3 -m pip install configparser
+sudo -H python3 -m pip install PyAudio
+sudo -H python3 -m pip install keyboard
+sudo -H python3 -m pip install serial
+sudo -H python3 -m pip install joystick
+sudo -H python3 -m pip install camera
+sudo -H python3 -m pip install pygame
+sudo -H python3 -m pip install numpy
+sudo -H python3 -m pip install matplotlib
+sudo -H python3 -m pip install pipy
+sudo -H python3 -m pip install scipy
+
+echo  "Installing specialty sound related things eg.(text to speech)"
+sudo -H python3 -m pip install python-speech-features
+sudo -H python3 -m pip install speech_classification
+sudo -H python3 -m pip install watson_tts_py
+sudo -H python3 -m pip install tts-watson
+sudo -H python3 -m pip install pyttsx3
+
+echo "Installing CNC and stl related Things"
+sudo -H python3 -m pip install gcodeutils
+sudo -H python3 -m pip install pypandoc
+sudo -H python3 -m pip install pycnc
+sudo -H python3 -m pip install grbl-link
+sudo -H python3 -m pip install makerbot_driver
+sudo -H python3 -m pip install fabby
+sudo -H python3 -m pip install gcody
+sudo -H python3 -m pip install numpy-stl
+sudo -H python3 -m pip install pyg3d
+sudo -H python3 -m pip install rsa
+sudo -H python3 -m pip install humanize-gcode
+sudo -H python3 -m pip install pillow
+
+echo "Installing visual manipulation stuff eg.(opencv and tensorflow)"
+sudo -H python3 -m pip install opencv-python
+sudo -H python3 -m pip install scikit
+sudo -H python3 -m pip install scikit-image
+sudo -H python3 -m pip install ImageMagic
+sudo -H python3 -m pip install arduino
+sudo -H python3 -m pip install pyopengl
+sudo -H python3 -m pip install YOSO
+sudo -H python3 -m pip install tensorflow
+
+cd /home/david
+

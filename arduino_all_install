@@ -1,0 +1,294 @@
+#!/bin/bash
+# Installs packages that are useful for a full dev environment.
+# Currently targeted at 14.04
+
+echo "Installs packages that are useful for My development environment." 
+echo "Currently targeted at Linux Mint 14.04"
+echo " "
+
+#----------------Main Installs----------------
+echo "Main installs"
+sudo apt-get update
+sudo apt-get install cmake
+sudo apt-get install git
+sudo apt-get upgrade git
+sudo apt-get install gitk
+sudo apt-get upgrade gitk
+cd /home/david
+
+
+# Arduino
+echo "Installing Arduino"
+cd /home/david
+sudo apt-get install arduino
+sudo apt-get upgrade arduino
+sudo apt-get update
+cd /home/david
+
+cd /home/david/Desktop
+touch Arduino.desktop
+echo " 
+[Desktop Entry]
+Type=Application
+Name=Arduino IDE
+GenericName=Create physical computing projects
+Exec=arduino
+Icon=arduino
+Terminal=false
+Categories=Development;Engineering;Electronics;
+MimeType=text/x-arduino
+Keywords=embedded electronics;electronics;avr;microcontroller;">> Arduino.desktop
+chmod 777 Arduino.desktop
+cd /home/david
+
+
+#Add USB Support
+sudo usermod -a -G dialout david
+sudo groupmod -a -G dialout david
+sudo groupmod -a -G dialout root
+sudo groupmod -a -G dialout adm
+
+sudo groupmod -a -G root david
+sudo groupmod -a -G root dialout
+sudo Groupmod -a -G root adm
+
+sudo groupmod -a -G adm david
+sudo groupmod -a -G adm root
+sudo groupmod -a -G adm dialout
+
+sudo chmod 777 ttyACM0
+sudo chmod 777 ttyACM1
+sudo chmod 777 /dev/ttyUSB0
+sudo chmod 777 /dev/ttyUSB1
+sudo chmod 777 /dev/ttyS0
+sudo chmod 777 /dev/ttyS1
+sudo chmod 777 /dev/ttyS31
+sudo chmod 777 /dev/ttyS32
+sudo chmod 777 /dev/ttyS33
+sudo apt-get update
+cd /home/david
+
+
+
+# Eagle 9.3.0
+echo "Installing Eagle 9.3.0"
+cd /home/david
+sudo apt-get install libcrypto++9:i386
+sudo apt-get install libfontconfig:i386
+sudo apt-get install libssl1.0.0:i386 
+sudo apt-get install libxcursor1:i386  
+sudo apt-get install libxi6:i386 
+sudo apt-get install libxrender1:i386 
+sudo apt-get install libxrandr2:i386  
+sudo apt-get upgrade libcrypto++9:i386
+sudo apt-get upgrade libfontconfig:i386
+sudo apt-get upgrade libssl1.0.0:i386 
+sudo apt-get upgrade libxcursor1:i386  
+sudo apt-get upgrade libxi6:i386 
+sudo apt-get upgrade libxrender1:i386 
+sudo apt-get upgrade libxrandr2:i386  
+sudo apt-get update
+
+wget https://www.autodesk.com/eagle-download-lin
+mv /home/david/eagle-download-lin /home/david/Autodesk_Eagle_9.3.0_English_Linux_64bit.tar.gz 
+tar xzf Autodesk_Eagle_9.3.0_English_Linux_64bit.tar.gz 
+rm Autodesk_Eagle_9.3.0_English_Linux_64bit.tar.gz 
+/home/david/eagle-9.3.0/eagle
+
+cd /home/david/Desktop
+touch Eagle.desktop
+echo "[Desktop Entry]
+Name=Eagle
+Exec=/home/david/eagle-9.3.0/eagle
+Comment=
+Terminal=true
+Icon=/home/david/eagle-9.3.0/bin/eagle-logo.png
+Type=Application
+Hidden=false
+NoDisplay=false" >> Eagle.desktop
+chmod 777 Eagle.desktop
+sudo apt-get update
+cd /home/david
+
+# Cheeze
+echo "Installing Cheese"
+cd /home/david
+sudo apt-get install cheese
+sudo apt-get upgrade cheese
+sudo apt-get update
+cd /home/david
+
+cd /home/david/Desktop
+touch Cheese.desktop
+echo "
+[Desktop Entry]
+Name=Cheese
+GenericName=Webcam Booth
+X-GNOME-FullName=Cheese Webcam Booth
+Comment=Take photos and videos with your webcam, with fun graphical effects
+Keywords=photo;video;webcam;
+Exec=cheese
+Terminal=false
+Type=Application
+StartupNotify=true
+Icon=org.gnome.Cheese
+Categories=GNOME;AudioVideo;Video;Recorder;
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=cheese
+X-GNOME-Bugzilla-Component=general
+X-GNOME-Bugzilla-Version=3.28.0
+X-AppStream-Ignore=true
+X-Ubuntu-Gettext-Domain=cheese" >> Cheese.desktop
+chmod 777 Cheese.desktop
+sudo apt-get update
+cd /home/david
+
+
+# Inkscape
+echo "InstallingInkscape"
+cd /home/david
+sudo apt-get install inkscape
+sudo apt-get upgrade inkscape
+sudo apt-get update
+cd /home/david
+
+cd /home/david/Desktop
+touch inkscape.desktop
+echo "[Desktop Entry]
+Version=1.0
+Name=Inkscape
+GenericName=Vector Graphics Editor
+X-GNOME-FullName=Inkscape Vector Graphics Editor
+Comment=Create and edit Scalable Vector Graphics images
+Type=Application
+Categories=Graphics;VectorGraphics;GTK;
+MimeType=image/svg+xml;image/svg+xml-compressed;application/vnd.corel-draw;application/pdf;application/postscript;image/x-eps;application/illustrator;
+Exec=inkscape %F
+TryExec=inkscape
+Terminal=false
+StartupNotify=true
+Icon=inkscape
+X-Ayatana-Desktop-Shortcuts=Drawing
+[Drawing Shortcut Group]
+Name=New Drawing
+Exec=inkscape
+TargetEnvironment=Unity" >> inkscape.desktop
+chmod 777 inkscape.desktop
+sudo apt-get update
+cd /home/david
+
+
+# Pinta paint program
+echo "Installing Pinta"
+cd /home/david
+sudo apt-get install pinta
+sudo apt-get upgrade pinta
+sudo apt-get update
+cd /home/david
+
+cd /home/david/Desktop
+touch Pinta.desktop
+echo "[Desktop Entry]
+Name=Pinta
+Comment=Easily create and edit images
+GenericName=Image Editor
+X-GNOME-FullName=Pinta Image Editor
+Exec=pinta %F
+Icon=pinta
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=Graphics;2DGraphics;
+MimeType=image/bmp;">> Pinta.desktop
+chmod 777 Pinta.desktop
+sudo apt-get update
+cd /home/david
+
+
+
+
+
+
+
+# Game emulators
+# Zsnes
+echo " Now installing the game emulator ( Zsnes ) it is an SNES emulator...."
+sudo apt-get install zsnes 
+
+# fceux
+cd /home/david
+echo " Now installing the game emulator ( fceux ) it is an NES emulator...."
+sudo apt-get install fceux
+
+# Controller Drivers
+echo "Now Installing Joystick Drivers..."  
+sudo apt-get install joystick
+sudo apt-get install xserver-xorg-input-joystick
+jscal /dev/input/js0
+
+
+#----------------Folder creator----------------
+cd /home/david
+echo "This is a script to create folder if they don't already exist" 
+if [ -d Cad_Stuff] 
+then 
+    echo "Found the file 'Cad_Stuff'"
+else 
+    echo "Could not find the file 'Cad_Stuff'"
+    mkdir Cad_Stuff
+    echo ""
+    echo "Created the folder 'Cad_Stuff'"
+fi
+
+if [ -d Programing_Stuff ] 
+then 
+    echo "Found the file 'Programing_Stuff'"
+else 
+    echo "Could not find the file 'Programing_Stuff'"
+    mkdir Programing_Stuff
+    cd /home/david/Programing_Stuff
+    mkdir Arduino_Stuff
+    cd /home/david/Programing_Stuff/Arduino_Stuff
+    mkdir Project_SAMAS
+    cd /home/david/Programing_Stuff
+    mkdir Python_Stuff
+    cd /home/david/Programing_Stuff/Python_Stuff
+    mkdir Games
+    cd /home/david/Programing_Stuff/Python_Stuff
+    mkdir OpenCV_Stuff
+    cd /home/david/Programing_Stuff/Python_Stuff/OpenCV_Stuff
+    mkdir Project_Drinking_Glass
+    cd /home/david
+    echo ""
+    echo "Created the folder 'Programing_Stuff'"
+fi
+
+if [ -d Electronic_Stuff ] 
+then 
+
+
+    echo "Found the file 'Electronic_Stuff'"
+else 
+    echo "Could not find the file 'Electronic_Stuff'"
+    mkdir Electronic_Stuff
+    cd /home/david/Electronic_Stuff
+    mkdir Eagle_Stuff
+    cd /home/david/Electronic_Stuff
+    mkdir KI_Cad
+    
+    echo ""
+    echo "Created the folder 'Electronic_Stuff'"
+fi
+
+if [ -d Games ] 
+then 
+    echo "Found the file 'Games'"
+else 
+    echo "Could not find the file 'Games'"
+    mkdir Games
+    echo ""
+    echo "Created the folder 'Games'"
+fi
+
+
+echo "Finished"

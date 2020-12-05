@@ -17,99 +17,6 @@ sudo apt-get upgrade gitk
 cd /home/david
 
 
-# Arduino
-echo "Installing Arduino"
-cd /home/david
-sudo apt-get install arduino
-sudo apt-get upgrade arduino
-sudo apt-get update
-cd /home/david
-
-cd /home/david/Desktop
-touch Arduino.desktop
-echo " 
-[Desktop Entry]
-Type=Application
-Name=Arduino IDE
-GenericName=Create physical computing projects
-Exec=arduino
-Icon=arduino
-Terminal=false
-Categories=Development;Engineering;Electronics;
-MimeType=text/x-arduino
-Keywords=embedded electronics;electronics;avr;microcontroller;">> Arduino.desktop
-chmod 777 Arduino.desktop
-cd /home/david
-
-
-#Add USB Support
-sudo usermod -a -G dialout david
-sudo groupmod -a -G dialout david
-sudo groupmod -a -G dialout root
-sudo groupmod -a -G dialout adm
-
-sudo groupmod -a -G root david
-sudo groupmod -a -G root dialout
-sudo Groupmod -a -G root adm
-
-sudo groupmod -a -G adm david
-sudo groupmod -a -G adm root
-sudo groupmod -a -G adm dialout
-
-sudo chmod 777 ttyACM0
-sudo chmod 777 ttyACM1
-sudo chmod 777 /dev/ttyUSB0
-sudo chmod 777 /dev/ttyUSB1
-sudo chmod 777 /dev/ttyS0
-sudo chmod 777 /dev/ttyS1
-sudo chmod 777 /dev/ttyS31
-sudo chmod 777 /dev/ttyS32
-sudo chmod 777 /dev/ttyS33
-sudo apt-get update
-cd /home/david
-
-
-
-# Eagle 9.3.0
-echo "Installing Eagle 9.3.0"
-cd /home/david
-sudo apt-get install libcrypto++9:i386
-sudo apt-get install libfontconfig:i386
-sudo apt-get install libssl1.0.0:i386 
-sudo apt-get install libxcursor1:i386  
-sudo apt-get install libxi6:i386 
-sudo apt-get install libxrender1:i386 
-sudo apt-get install libxrandr2:i386  
-sudo apt-get upgrade libcrypto++9:i386
-sudo apt-get upgrade libfontconfig:i386
-sudo apt-get upgrade libssl1.0.0:i386 
-sudo apt-get upgrade libxcursor1:i386  
-sudo apt-get upgrade libxi6:i386 
-sudo apt-get upgrade libxrender1:i386 
-sudo apt-get upgrade libxrandr2:i386  
-sudo apt-get update
-
-wget https://www.autodesk.com/eagle-download-lin
-mv /home/david/eagle-download-lin /home/david/Autodesk_Eagle_9.3.0_English_Linux_64bit.tar.gz 
-tar xzf Autodesk_Eagle_9.3.0_English_Linux_64bit.tar.gz 
-rm Autodesk_Eagle_9.3.0_English_Linux_64bit.tar.gz 
-/home/david/eagle-9.3.0/eagle
-
-cd /home/david/Desktop
-touch Eagle.desktop
-echo "[Desktop Entry]
-Name=Eagle
-Exec=/home/david/eagle-9.3.0/eagle
-Comment=
-Terminal=true
-Icon=/home/david/eagle-9.3.0/bin/eagle-logo.png
-Type=Application
-Hidden=false
-NoDisplay=false" >> Eagle.desktop
-chmod 777 Eagle.desktop
-sudo apt-get update
-cd /home/david
-
 # Cheeze
 echo "Installing Cheese"
 cd /home/david
@@ -203,11 +110,6 @@ MimeType=image/bmp;">> Pinta.desktop
 chmod 777 Pinta.desktop
 sudo apt-get update
 cd /home/david
-
-
-
-
-
 
 
 # Game emulators

@@ -357,6 +357,32 @@ sudo apt-get update
 cd /home/david
 
 
+# Krita paint program
+echo "Installing krita"
+cd /home/david
+sudo apt-get install krita
+sudo apt-get upgrade krita
+sudo apt-get update
+cd /home/david
+
+cd /home/david/Desktop
+touch krita.desktop
+echo "[Desktop Entry]
+Name=Krita
+Comment=Easily create and edit images
+GenericName=Image Editor
+X-GNOME-FullName=Pinta Image Editor
+Exec=krita %F
+Icon=krita
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=Graphics;2DGraphics;
+MimeType=image/bmp;">> Krita.desktop
+chmod 777 Krita.desktop
+sudo apt-get update
+cd /home/david
+
 
 # Java11 program for linux mint 19
 echo "Installing Java 11"

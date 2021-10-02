@@ -1,0 +1,19 @@
+#!/bin/bash
+# Installs packages that are useful for a full dev environment.
+# Currently targeted at 14.04
+
+echo "Installs packages that are useful for My development environment." 
+echo "Currently targeted at Linux Mint 14.04"
+echo " "
+
+#----------------Main Installs----------------
+sudo add-apt-repository ppa:kritalime/ppa
+sudo apt-get update
+sudo apt-get install krita
+
+sudo apt-get install krita-l10n
+
+sudo add-apt-repository \ "http://ppa.launchpad.net/kritalime/ppa/ubuntu main/debug"
+
+sudo apt-get update
+sudo apt-get install krita-dbgsym

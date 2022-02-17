@@ -128,7 +128,24 @@ else
     echo "Nothing Found. So, I will do nothing'"
 fi
 
+cd /home/david
+if [ -d Templates] 
+then 
+    echo "Found the folder Templates"
+    echo "Deleting the folder Templates"
+    rm -r Templates
+else 
+    echo "Nothing Found. So, I will do nothing'"
+fi
 
-
+cd /home/david
+if [ -d Public] 
+then 
+    echo "Found the folder Public"
+    echo "Deleting the folder Public"
+    rm -r Public
+else 
+    echo "Nothing Found. So, I will do nothing'"
+fi
 
 echo"Finished"

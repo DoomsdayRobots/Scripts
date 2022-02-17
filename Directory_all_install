@@ -5,47 +5,53 @@ cd /home/david
 echo "This is a script to create folder if they don't already exist" 
 if [ -d Cad_Stuff] 
 then 
-    echo "Found the file 'Cad_Stuff'"
+    echo "Found the folder 'Cad_Stuff'"
 else 
-    echo "Could not find the file 'Cad_Stuff'"
+    echo "Could not find the folder 'Cad_Stuff'"
     mkdir Cad_Stuff
     echo ""
     echo "Created the folder 'Cad_Stuff'"
 fi
 
+cd /home/david
 if [ -d Programing_Stuff ] 
 then 
-    echo "Found the file 'Programing_Stuff'"
+    echo "Found the folder 'Programing_Stuff'"
 else 
-    echo "Could not find the file 'Programing_Stuff'"
+    echo "Could not find the folder 'Programing_Stuff'"
     mkdir Programing_Stuff
+
     cd /home/david/Programing_Stuff
     mkdir Arduino_Stuff
-    cd /home/david/Programing_Stuff/Arduino_Stuff
-    mkdir Project_SAMAS
+
     cd /home/david/Programing_Stuff
     mkdir Python_Stuff
+
     cd /home/david/Programing_Stuff/Python_Stuff
     mkdir Games
+
     cd /home/david/Programing_Stuff/Python_Stuff
     mkdir OpenCV_Stuff
+
     cd /home/david/Programing_Stuff/Python_Stuff/OpenCV_Stuff
     mkdir Project_Drinking_Glass
+
     cd /home/david
     echo ""
     echo "Created the folder 'Programing_Stuff'"
 fi
 
+cd /home/david
 if [ -d Electronic_Stuff ] 
 then 
-
-
-    echo "Found the file 'Electronic_Stuff'"
+    echo "Found the folder 'Electronic_Stuff'"
 else 
-    echo "Could not find the file 'Electronic_Stuff'"
+    echo "Could not find the folder 'Electronic_Stuff'"
     mkdir Electronic_Stuff
+
     cd /home/david/Electronic_Stuff
     mkdir Eagle_Stuff
+    
     cd /home/david/Electronic_Stuff
     mkdir KI_Cad
     
@@ -53,15 +59,76 @@ else
     echo "Created the folder 'Electronic_Stuff'"
 fi
 
+cd /home/david
 if [ -d Games ] 
 then 
-    echo "Found the file 'Games'"
+    echo "Found the folder 'Games'"
 else 
-    echo "Could not find the file 'Games'"
+    echo "Could not find the folder 'Games'"
     mkdir Games
+
+    cd /home/david/Games
+    mkdir Emulators
+
+    cd /home/david/Games/Emulators
+    mkdir NES
+    
+    cd /home/david/Games/Emulators
+    mkdir SNES
+
+    cd /home/david/Games/Emulators
+    mkdir Genesis
+        
+    cd /home/david/Games
+    mkdir Roms_I_Own
+
+    cd /home/david/Games/Roms_I_Own
+    mkdir NES
+
+    cd /home/david/Games/Roms_I_Own
+    mkdir SNES
+
+    cd /home/david/Games/Roms_I_Own
+    mkdir Genesis
+
     echo ""
     echo "Created the folder 'Games'"
 fi
+
+
+echo "Now detecting unwanted Folders"
+cd /home/david
+if [ -d Pictures ] 
+then 
+    echo "Found the folder Pictures"
+    echo "Deleting the folder Pictures"
+    rm -r Pictures
+else 
+    echo "Nothing Found. So, I will do nothing'"
+fi
+
+cd /home/david
+if [ -d Videos ] 
+then 
+    echo "Found the folder Videos"
+    echo "Deleting the folder Videos"
+    rm -r Videos
+else 
+    echo "Nothing Found. So, I will do nothing'"
+fi
+
+
+cd /home/david
+if [ -d Music] 
+then 
+    echo "Found the folder Music"
+    echo "Deleting the folder Music"
+    rm -r Music
+else 
+    echo "Nothing Found. So, I will do nothing'"
+fi
+
+
 
 
 echo"Finished"

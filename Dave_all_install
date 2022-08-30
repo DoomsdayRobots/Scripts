@@ -60,6 +60,7 @@ cd /home/david
 
 
 #Add USB Support
+# your current user name is dtop-n500
 sudo usermod -a -G dialout david
 sudo groupmod -a -G dialout david
 sudo groupmod -a -G dialout root
@@ -72,6 +73,22 @@ sudo Groupmod -a -G root adm
 sudo groupmod -a -G adm david
 sudo groupmod -a -G adm root
 sudo groupmod -a -G adm dialout
+sudo groupmod -a -G nfsnobody dialout
+
+#Add USB Support
+# With linux mint 19.2  
+# This all works as of 2022
+# To find your user name
+# use: whoami 
+
+# your current user name is dtop-n500
+# To list the groups in dtop-n500
+# use: groups dtop-n500  
+
+sudo groupadd nfsnobody
+sudo usermod -a -G nfsnobody dtop-n500
+sudo usermod -a -G dialout dtop-n500
+
 
 sudo chmod 777 ttyACM0
 sudo chmod 777 ttyACM1

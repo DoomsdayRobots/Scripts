@@ -1,0 +1,65 @@
+#!/bin/bash
+# Install python modules for python
+
+echo "Install python modules for python" 
+echo " "
+
+sudo apt-get install --assume-yes update
+
+echo "Attempting to install and upgrade pip".
+
+
+python -m pip install --upgrade pip
+
+echo " Some basics..."
+echo " "
+echo " "
+echo " Now trying to install:"
+echo "    Setup Tools"
+echo "    numpy"
+echo "    matplotlib"
+echo "    pypi"
+echo "    scipy"
+echo "    pygame"
+echo "    beautifulsoup4"
+
+python -m pip install setuptools
+python -m pip install numpy
+python -m pip install matplotlib
+python -m pip install pypi
+python -m pip install scipy
+python -m pip install pygame
+python -m pip install beautifulsoup4
+
+echo " "
+echo " "
+echo " Now trying to install:"
+echo "    Open GL"
+echo "    openCV"
+echo "    Crypto"
+
+python -m pip install PyOpenGL 
+python -m pip install opencv-contrib-python  
+python -m pip install crypto  
+
+echo " "
+echo " "
+echo " Now attempting to install Kivy"
+echo " "
+echo " "
+python -m pip install kivy[base] kivy_examples --pre --extra-index-url https://kivy.org/downloads/simple/
+
+python -m pip install kivy-garden
+python -m pip install urllib3
+
+python -m pip install pillow
+python -m pip install lxml
+python -m pip install jupyter
+
+
+echo " "
+echo " "
+echo "Done attempting to install everything! "
+echo " "
+echo " "
+

@@ -3,11 +3,14 @@
 
 echo "Install python modules for python 3" 
 echo " "
-
+echo " "
 sudo apt-get install --assume-yes update
 
+echo " "
+echo " "
 echo "Attempting to install and upgrade pip".
-
+echo " "
+echo " "
 
 python3 -m pip install --upgrade pip
 
@@ -22,6 +25,8 @@ echo "    pypi"
 echo "    scipy"
 echo "    pygame"
 echo "    beautifulsoup4"
+echo " "
+echo " "
 
 python3 -m pip install setuptools
 python3 -m pip install numpy
@@ -37,6 +42,8 @@ echo " Now trying to install:"
 echo "    Open GL"
 echo "    openCV"
 echo "    Crypto"
+echo " "
+echo " "
 
 python3 -m pip install PyOpenGL 
 python3 -m pip install opencv-contrib-python  

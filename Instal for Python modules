@@ -57,6 +57,7 @@ echo " "
 echo " Now attempting to install Kivy"
 echo " "
 echo " "
+
 python -m pip install kivy[base] kivy_examples --pre --extra-index-url https://kivy.org/downloads/simple/
 
 python -m pip install kivy-garden

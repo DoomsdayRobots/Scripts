@@ -1,13 +1,19 @@
 #!/bin/bash
 # Install python modules for python
 
+echo " "
+echo " "
 echo "Install python modules for python" 
+echo " "
 echo " "
 
 sudo apt-get install --assume-yes update
 
+echo " "
+echo " "
 echo "Attempting to install and upgrade pip".
-
+echo " "
+echo " "
 
 python -m pip install --upgrade pip
 
@@ -22,6 +28,8 @@ echo "    pypi"
 echo "    scipy"
 echo "    pygame"
 echo "    beautifulsoup4"
+echo " "
+echo " "
 
 python -m pip install setuptools
 python -m pip install numpy
@@ -37,6 +45,8 @@ echo " Now trying to install:"
 echo "    Open GL"
 echo "    openCV"
 echo "    Crypto"
+echo " "
+echo " "
 
 python -m pip install PyOpenGL 
 python -m pip install opencv-contrib-python  

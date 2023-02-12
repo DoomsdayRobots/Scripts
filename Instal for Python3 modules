@@ -1,6 +1,8 @@
 #!/bin/bash
 # Install python modules for python 3
 
+echo " "
+echo " "
 echo "Install python modules for python 3" 
 echo " "
 echo " "
@@ -54,6 +56,7 @@ echo " "
 echo " Now attempting to install Kivy"
 echo " "
 echo " "
+
 python3 -m pip install kivy[base] kivy_examples --pre --extra-index-url https://kivy.org/downloads/simple/
 
 python3 -m pip install kivy-garden

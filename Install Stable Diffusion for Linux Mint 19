@@ -1,0 +1,194 @@
+#!/bin/bash
+# Install Stable Diffusion and my favorate models for Linux.
+echo " "
+echo "Install Stable Diffusion and frequently used models for Linux." 
+
+sudo apt-get install 
+#--assume-yes update
+
+if [ -d Stable_Diffusion ]
+then
+    echo "Found the folder."
+    echo "now moving to it."
+else 
+    echo "Could not find the folder."
+    echo "Now creating it!"
+    echo "now moving to it..."
+    mkdir Stable_Diffusion
+fi
+cd Stable_Diffusion
+git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git
+#read -p "Press the ( p ) key to continue..."
+if [ -d Models ]
+then
+    echo "Found the folder."
+    echo "now moving to it."
+else 
+    echo "Could not find the folder."
+    echo "Now creating it!"
+    echo "now moving to it..."
+    mkdir Models
+fi
+cd Models
+
+echo "Downloading:  Smaller Main Model 4.Table_5GB." 
+wget https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.ckpt
+echo "Downloading:  Larger Main Model 7.4GB." 
+wget https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned.ckpt
+
+echo "copying to another folder"
+cp v1-5-pruned.ckpt ~/Stable_Diffusion/stable-diffusion-webui/models/Stable-diffusion/
+
+echo "go up one level, back to our main directory 'Stable_Diffusion'."
+cd ..
+
+echo "go to where we just copied our file 'v1-5-pruned.ckpt'."
+cd stable-diffusion-webui/models/Stable-diffusion/
+
+echo "renameing 'v1-5-pruned.ckpt' to 'model.ckpt'."
+mv v1-5-pruned.ckpt model.ckpt
+
+echo " "
+echo "*******************************************************************"
+echo " "
+
+echo "Downloading: super hero diffusion"
+wget https://huggingface.co/ogkalu/Superhero-Diffusion/resolve/main/superhero-diffusion.ckpt
+
+echo "Downloading: Comic Diffusion 1"
+wget https://huggingface.co/ogkalu/Comic-Diffusion/resolve/main/comic-diffusion.ckpt
+
+echo "Downloading: Comic Diffusion 2"
+wget https://huggingface.co/ogkalu/Comic-Diffusion/resolve/main/comic-diffusion-V2.ckpt
+
+echo "Downloading: Disney Diffusion"
+wget https://huggingface.co/nitrosocke/mo-di-diffusion/resolve/main/moDi-v1-pruned.ckpt
+echo " rename 'moDi-v1-pruned.ckpt' to 'disney-diffusion.ckpt'."
+mv moDi-v1-pruned.ckpt disney-diffusion.ckpt
+
+echo "Downloading: Cyber punk Diffusion"
+wget https://huggingface.co/DGSpitzer/Cyberpunk-Anime-Diffusion/resolve/main/Cyberpunk-Anime-Diffusion.ckpt 
+
+echo " "
+echo "*******************************************************************"
+echo " "
+
+echo "Downloading: AbyssOrangeMix_base"
+wget https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/AbyssOrangeMix/AbyssOrangeMix_base.ckpt
+
+echo "Downloading: AbyssOrangeMix2_sfw"
+wget https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/AbyssOrangeMix2/AbyssOrangeMix2_sfw.ckpt
+
+echo "Downloading: BloodNightOrangeMix"
+wget https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/BloodOrangeMix/BloodNightOrangeMix.ckpt
+
+echo "Downloading: BloodOrangeMix_half"
+wget https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/BloodOrangeMix/BloodOrangeMix_half.ckpt
+
+echo "Downloading: EerieOrangeMix2_base"
+wget https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/EerieOrangeMix/EerieOrangeMix2_base.ckpt
+
+echo "Downloading: EerieOrangeMix_base"
+wget https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/EerieOrangeMix/EerieOrangeMix_base.ckpt
+
+echo "Downloading: ElyNightOrangeMix"
+wget https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/ElyOrangeMix/ElyNightOrangeMix.ckpt
+
+echo "Downloading: ElyOrangeMix"
+wget https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/ElyOrangeMix/ElyOrangeMix.ckpt
+
+echo "Downloading: ElyOrangeMix_half"
+wget https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/ElyOrangeMix/ElyOrangeMix_half.ckpt
+
+echo "Downloading: ElderOrangeMix"
+wget https://huggingface.co/WarriorMama777/OrangeMixs/resolve/main/Models/Other/ElderOrangeMix.ckpt
+
+echo " "
+echo "*******************************************************************"
+echo " "
+
+echo "Downloading: ChromaV5%20(2.0)"
+wget https://huggingface.co/SomaMythos/ChromaV5/resolve/main/ChromaV5%20(2.0).ckpt
+
+echo "Downloading: ChromaV5"
+wget https://huggingface.co/SomaMythos/ChromaV5/resolve/main/ChromaV5.ckpt
+
+echo " "
+echo "*******************************************************************"
+echo " "
+
+#echo "Downloading: anime-pencil-diffusion-v1"
+#wget https://huggingface.co/yehiaserag/anime-pencil-diffusion/resolve/main/anime-pencil-diffusion-v1.ckpt
+
+#echo "Downloading: anime-pencil-diffusion-v2"
+#wget https://huggingface.co/yehiaserag/anime-pencil-diffusion/resolve/main/anime-pencil-diffusion-v2.ckpt
+
+#echo "Downloading: anime-pencil-diffusion-v3"
+#wget https://huggingface.co/yehiaserag/anime-pencil-diffusion/resolve/main/anime-pencil-diffusion-v3.ckpt
+
+echo "Downloading: anime-pencil-diffusion-v4"
+wget https://huggingface.co/yehiaserag/anime-pencil-diffusion/resolve/main/anime-pencil-diffusion-v4.ckpt
+
+echo " "
+echo "*******************************************************************"
+echo " "
+
+echo "Downloading: Anything-V3.0-pruned"
+wget https://huggingface.co/andite/anything-v4.0/resolve/main/Anything-V3.0-pruned.ckpt
+
+#echo "Downloading: anything-v4.0-pruned-fp16"
+#wget https://huggingface.co/andite/anything-v4.0/resolve/main/anything-v4.0-pruned-fp16.ckpt
+
+#echo "Downloading: anything-v4.0-pruned-fp32"
+#wget https://huggingface.co/andite/anything-v4.0/resolve/main/anything-v4.0-pruned-fp32.ckpt
+
+echo "Downloading: anything-v4.0-pruned"
+wget https://huggingface.co/andite/anything-v4.0/resolve/main/anything-v4.0-pruned.ckpt
+
+#echo "Downloading: anything-v4.0"
+#wget https://huggingface.co/andite/anything-v4.0/resolve/main/anything-v4.0.ckpt
+
+#echo "Downloading: anything-v4.5-pruned-fp16"
+#wget https://huggingface.co/andite/anything-v4.0/resolve/main/anything-v4.5-pruned-fp16.ckpt
+
+#echo "Downloading: anything-v4.5-pruned-fp32"
+#wget https://huggingface.co/andite/anything-v4.0/resolve/main/anything-v4.5-pruned-fp32.ckpt
+
+echo "Downloading: anything-v4.5-pruned"
+wget https://huggingface.co/andite/anything-v4.0/resolve/main/anything-v4.5-pruned.ckpt
+
+#echo "Downloading: anything-v4.5"
+#wget https://huggingface.co/andite/anything-v4.0/resolve/main/anything-v4.5.ckpt
+
+echo " "
+echo "*******************************************************************"
+echo " "
+
+echo "Downloading: HD-16"
+wget https://huggingface.co/Deltaadams/HentaiDiffusion/resolve/main/HD-16.ckpt
+
+echo "Downloading: HD-17"
+wget https://huggingface.co/Deltaadams/HentaiDiffusion/resolve/main/HD-17.ckpt
+
+echo "Downloading: HD-18"
+wget https://huggingface.co/Deltaadams/HentaiDiffusion/resolve/main/HD-18.ckpt
+
+echo "Downloading: HD-19"
+wget https://huggingface.co/Deltaadams/HentaiDiffusion/resolve/main/HD-19.ckpt
+
+echo " "
+echo "*******************************************************************"
+echo " "
+
+echo "lets go to our folder 'Stable_Diffusion' and then to our folder 'stable-diffusion-webui'."  
+cd ~/Stable_Diffusion/stable-diffusion-webui/
+
+echo "lets add this line of text 'git pull' to our 'webui-user.bat' file."
+echo ' ' | cat - webui-user.bat > temp && mv temp webui-user.bat
+echo 'git pull ' | cat - webui-user.bat > temp && mv temp webui-user.bat
+
+#echo "Downloading: "
+#wget
+
+echo "All Done!!!"
+

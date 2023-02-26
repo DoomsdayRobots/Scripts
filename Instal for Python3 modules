@@ -6,7 +6,26 @@ echo " "
 echo "Install python modules for python 3" 
 echo " "
 echo " "
+
 sudo apt-get install --assume-yes update
+
+echo " " 
+echo " "
+echo " Attempting to install Idle for python 2"
+echo " "
+echo " "
+
+sudo apt-get install idle
+
+
+echo " " 
+echo " "
+echo " Attempting to install Idle for python 2"
+echo " "
+echo " "
+
+sudo apt-get install idle3
+
 
 echo " "
 echo " "

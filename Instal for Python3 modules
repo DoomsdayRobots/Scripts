@@ -18,23 +18,6 @@ echo " "
 sudo apt-get install idle --assume-yes update
 
 
-echo " " 
-echo " "
-echo " Attempting to install Idle for python 2"
-echo " "
-echo " "
-
-sudo apt-get install idle3 --assume-yes update
-
-
-echo " "
-echo " "
-echo "Attempting to install and upgrade pip".
-echo " "
-echo " "
-
-python3 -m pip install --upgrade pip
-
 echo " Some basics..."
 echo " "
 echo " "

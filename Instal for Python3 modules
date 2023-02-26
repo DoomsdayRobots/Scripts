@@ -27,6 +27,7 @@ echo "    pypi"
 echo "    scipy"
 echo "    pygame"
 echo "    beautifulsoup4"
+echo "    brew"
 echo " "
 echo " "
 
@@ -37,19 +38,54 @@ python3 -m pip install pypi
 python3 -m pip install scipy
 python3 -m pip install pygame
 python3 -m pip install beautifulsoup4
+python3 -m pip install brew
 
 echo " "
 echo " "
 echo " Now trying to install:"
 echo "    Open GL"
+echo "    install numpy-stl"
 echo "    openCV"
 echo "    Crypto"
 echo " "
 echo " "
 
 python3 -m pip install PyOpenGL 
+python3 -m pip install numpy-stl
 python3 -m pip install opencv-contrib-python  
 python3 -m pip install crypto  
+
+echo " "
+echo " "
+echo " Now attempting to install G-Code related things..."
+echo "    gcodeutils"
+echo "    pypandoc"
+echo "    pycnc"
+echo "    grbl-link"
+echo "    makerbot_driver"
+echo "    fabby"
+echo "    gcody"
+echo " "
+echo " "
+
+python 3 -m pip install gcodeutils
+python 3 -m pip install pypandoc
+python 3 -m pip install pycnc
+python 3 -m pip install grbl-link
+python 3 -m pip install makerbot_driver
+python 3 -m pip install fabby
+python 3 -m pip install gcody
+
+echo " "
+echo " "
+echo " Now attempting to install Text To speach related things..." 
+echo "    watson_tts_py"
+echo "    tts-watson"
+echo " "
+echo " "
+
+python 3 -m pip install watson_tts_py
+python 3 -m pip install tts-watson
 
 echo " "
 echo " "

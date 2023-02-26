@@ -1,0 +1,60 @@
+#!/bin/bash
+# Install ROS for ubuntu mint 20.4".
+
+echo " "
+echo " "
+echo "Attempting to install ROS..."
+echo " "
+echo " "
+
+sudo apt-get install update
+
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list' 
+
+echo " "
+echo " "
+echo " Remove broken Keys..."
+echo " "
+echo " "
+
+# sudo apt-key del 421C365BD9FF1F717815A3895523BAEEB01FA116
+# sudo apt-key del B01FA116
+
+sudo -E apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+
+curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+
+sudo apt clean && sudo apt update
+
+sudo apt install ros-noetic-desktop-full
+
+echo " "
+echo " "
+echo " main install almost done "
+echo " "
+echo " "
+
+# source /opt/ros/noetic/setup.bash
+
+echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+
+echo "source /opt/ros/noetic/setup.zsh" >> ~/.zshrc
+source ~/.zshrc
+
+
+echo " "
+echo " "
+echo "Dependancies..."
+echo " "
+echo " "
+sudo apt-get update
+
+sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+
+sudo apt install python3-rosdep
+
+sudo rosdep init
+rosdep update
+
+

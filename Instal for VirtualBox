@@ -1,0 +1,15 @@
+#!/bin/bash
+# Install VirtualBox for linux mint 22.1".
+
+echo " "
+echo " "
+echo "Attempting to install VirtualBox".
+echo " "
+echo " "
+
+sudo apt-get install update
+
+sudo apt install virtualbox virtualbox-ext-pack--assume-yes update
+
+
+

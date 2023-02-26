@@ -1,0 +1,15 @@
+#!/bin/bash
+# Install Thonny for linux mint 22.1".
+
+echo " "
+echo " "
+echo "Attempting to install Thonny".
+echo " "
+echo " "
+
+sudo apt-get install update
+
+sudo apt-get indstall python3-tk thonny --assume-yes update
+
+
+

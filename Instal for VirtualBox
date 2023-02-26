@@ -9,7 +9,7 @@ echo " "
 
 sudo apt-get install update
 
-sudo apt install virtualbox virtualbox-ext-pack--assume-yes update
+sudo apt install virtualbox virtualbox-ext-pack --assume-yes update
 
 
 

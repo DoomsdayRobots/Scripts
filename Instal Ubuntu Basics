@@ -1,0 +1,73 @@
+##!/bin/bash
+# Install basics for ubuntu 20.04.01".
+
+echo " "
+echo " "
+echo "Attempting to install some basic stuff for ubuntu 20.04.1..."
+echo " "
+echo " "
+
+echo " First we will update and upgrade anything that is avalible."
+sudo apt-get install update
+sudo apt-get upgrade
+
+echo "Next we are going to install some python pip modules for python3."
+pip3 install --upgrade pip
+pip3 install setuptools
+pip3 install numpy
+pip3 install numpy-stl
+pip3 install matplotlib
+pip3 install pypi
+pip3 install scipy
+pip3 install pygame
+pip3 install PyAudio
+
+echo "Internet related stuff."
+pip3 install beautifulsoup4
+#pip3 install kivy[base] kivy_examples --pre --extra-index-
+#url http://kivy.org/downloads/simple/
+#pip3 install kivy-garden
+pip3 install urllib3
+
+echo "OpenCv related stuff."
+pip3 install PyOpenGl
+pip3 install openai
+pip3 install opencv-contrib-python
+
+
+
+
+
+
+echo "OK, Now we are going to add 'Edit As Administrator' to 
+the file navagation menue navigation."
+
+sudo apt install nautilus-extension-gnome-terminal
+sudo apt upgrade nautilus-extension-gnome-terminal
+
+
+#sudo apt install python3-nautilus
+#pip3 install --user nautilus-open-any-terminal
+#pip3 install nautilus-open-any-terminal
+#nautilus -q
+#sudo tools/update-extension-user.sh install    # for a user install
+#sudo tools/update-extension-system.sh install  # for a system-wide install
+
+
+
+#sudo apt update
+
+#cd .local/share/nautilus/scripts
+#touch Terminal
+#echo '#!/bin/sh 
+#gnome-terminal'>> Terminal
+#chmod 777 Terminal
+#cd ~
+
+
+# note to open a picture use 
+# eog then the file location,name,extention
+# eg    eog /home/dtopt530/ lady.jpg
+
+
+

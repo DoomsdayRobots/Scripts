@@ -1,0 +1,239 @@
+##!/bin/bash
+# Install some basic stuff for ubuntu 20.04.01".
+
+echo " "
+echo " "
+echo "Attempting to install some basic stuff for ubuntu 20.04.01..."
+echo " "
+echo " "
+
+echo " First we will update and upgrade anything that is avalible."
+sudo apt-get install update
+sudo apt-get upgrade
+sudo apt update
+echo "OK, Now we are going to add 'Edit As Administrator' to 
+the file navagation menue navigation."
+
+sudo apt install nautilus-extension-gnome-terminal --yes
+sudo apt autoremove --yes
+sudo apt upgrade nautilus-extension-gnome-terminal --yes
+sudo apt install nautilus-dropbox --yes
+nautilus -q
+sudo apt update --yes
+
+
+
+echo "Setup some git stuff."
+git config --global user.email "kup1977@hotmail.com"
+git config --global user.name "DoomsdayRobots"
+git config --global user.password "Transform1977!"
+
+
+
+echo "Lets install arduino"
+sudo usermod -a -G dialout dtopt530
+sudo apt install arduino --yes
+sudo apt update --yes
+sudo apt upgrade arduino --yes
+sudo apt update --yes
+
+
+
+
+
+echo "I think it's time to setup ROS related Stuff."
+echo " Let's install Terminator, it's a multi terminal window program."
+sudo apt install terminator --yes
+sudo apt update --yes
+
+echo "Let's install pyaudio."
+sudo apt install python3-pyaudio --yes
+
+
+echo "OK, now on to installing ROS."
+wget -c https://raw.githubusercontent.com/qboticslabs/ros_install_noetic/master/ros_install_noetic.sh && chmod +x ./ros_install_noetic.sh && ./ros_install_noetic.sh --yes
+sudo apt install ros-noetic-desktop-full
+
+sudo apt update
+sudo apt autoremove
+sudo apt update
+
+
+
+echo "Let's make a fwe folders for our ROS related Stuff."
+if [ -d ROS' \Stuff' ] 
+then 
+    echo "Found the folder 'ROS Stuff'"
+else 
+    echo "Could not find the folder 'ROS Stuff'"
+    mkdir 'ROS Stuff'
+    echo ""
+    echo "Created the folder 'ROS Stuff'"
+fi
+echo "Go into the 'ROS Stuf' folder."
+cd "ROS Stuff"
+
+if [ -d learning ] 
+then 
+    echo "Found the folder 'learning'"
+else 
+    echo "Could not find the folder 'learning'"
+    mkdir 'learning'
+    echo ""
+    echo "Created the folder 'learning'"
+fi
+echo "Go into the 'learning' folder."
+cd learning
+
+if [ -d Chris' \Bruner' ] 
+then 
+    echo "Found the folder 'Chris Bruner'"
+    
+else 
+    echo "Could not find the folder 'Chris Bruner'"
+    mkdir 'Cris Bruner'
+    echo ""
+    echo "Created the folder 'Cris Bruner'"
+fi
+
+if [ -d Sam' \Tagliabracci' ] 
+then 
+    echo "Found the folder 'Sam Tagliabracci'"
+else 
+    echo "Could not find the folder 'Sam Tagliabracci'"
+    mkdir 'Sam Tagliabracci'
+    echo ""
+    echo "Created the folder 'Sam Tagliabracci'"
+fi
+
+if [ -d wisper ] 
+then 
+    echo "Found the folder 'wisper'"
+else 
+    echo "Could not find the folder 'wisper'"
+    mkdir 'wisper'
+    echo ""
+    echo "Created the folder 'wisper'"
+fi
+echo "Go into the 'wisper' folder."
+cd wisper
+
+git clone https://github.com/ggerganov/whisper.cpp.git
+cd whisper.cpp
+cmake 
+make
+cd ~
+sudo apt update
+python3 -m pip install webrtcvad
+sudo apt install libwebrtc-audio-processing1
+sudo apt update
+cd ~
+
+
+
+
+
+
+cd 'ROS Stuff'/learning
+if [ -d catkin ] 
+then 
+    echo "Found the folder 'catkin'"
+else 
+    echo "Could not find the folder 'catkin'"
+    mkdir 'catkin'
+    echo ""
+    echo "Created the folder 'catkin'"
+fi
+
+echo "Go into the 'catkin' folder."
+cd catkin
+echo "Let's create a file called '01-myfirst.urdf'."
+touch 01-myfirst.urdf
+echo '<?xml version="1.0"?>
+<robot name="myfirst">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.6" radius="0.2"/>
+      </geometry>
+    </visual>
+  </link>
+</robot>'>> 01-myfirst.urdf
+
+echo "Let's create another file called '02-multipleshapes.urdf'."
+touch 02-multipleshapes.urdf
+echo "<?xml version="1.0"?>
+<robot name="multipleshapes">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.6" radius="0.2"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="right_leg">
+    <visual>
+      <geometry>
+        <box size="0.6 0.1 0.2"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="base_to_right_leg" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_leg"/>
+  </joint>
+</robot>">> 02-multipleshapes.urdf
+
+echo "To launch the viewer type:
+roslaunch urdf_tutorial display.launch model:='$(find urdf_tutorial)/urdf/01-myfirst.urdf'"
+echo "
+
+or 
+
+you could try:
+roslaunch urdf_tutorial display.launch model:='$(find urdf_tutorial)/urdf/02-multipleshapes.urdf'"
+
+#roslaunch urdf_tutorial display.launch model:='$(find urdf_tutorial)/urdf/01-myfirst.urdf'
+
+#roslaunch urdf_tutorial display.launch model:='$(find urdf_tutorial)/urdf/02-multipleshapes.urdf'
+
+cd ~
+
+
+
+
+
+echo "Next we are going to install some python pip modules for python3."
+sudo apt install python3-pip --yes
+sudo apt update
+python3 -m pip install --upgrade pip
+python3 -m pip install setuptools
+python3 -m pip install --upgrade setuptools
+python3 -m pip install numpy
+python3 -m pip install numpy-stl
+python3 -m pip install matplotlib
+python3 -m pip install pypi
+python3 -m pip install scipy
+python3 -m pip install pygame
+#sudo apt install python3-pyaudio
+python3 -m pip install pyfirmata
+
+echo "Internet related stuff."
+python3 -m pip install beautifulsoup4
+python3 -m pip install urllib3
+
+echo "OpenCv related stuff."
+python3 -m pip install PyOpenGl
+python3 -m pip install openai --no-warn-script-location
+python3 -m pip install opencv-contrib-python
+sudo apt update --yes
+
+echo "Let's open the file '02-multipleshapes.urdf'." 
+cd 'ROS Stuff'/learning/catkin
+roslaunch urdf_tutorial display.launch model:='$(find urdf_tutorial)/urdf/02-multipleshapes.urdf'
+
+cd ~
+
+

@@ -1,2 +1,2 @@
 # Scripts
-autoinstall a full dev enviroment for linux mint 
+This is a random collection of scripts to install various things for various systems.

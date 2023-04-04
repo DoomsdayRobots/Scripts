@@ -199,6 +199,8 @@ else
     echo "Created the folder 'build'"
 fi
 
+source ~/catkin_ws/devel/setup.bash
+
 echo "Return to previous directory."
 catkin_make
 cd ..
@@ -291,5 +293,18 @@ cd 'ROS Stuff'/learning/catkin
 roslaunch urdf_tutorial display.launch model:='$(find urdf_tutorial)/urdf/02-multipleshapes.urdf'
 
 cd ~
+
+
+
+
+
+
+
+
+temp
+
+roscore
+source ~/catkin_ws/devel/setup.bash
+
 
 
